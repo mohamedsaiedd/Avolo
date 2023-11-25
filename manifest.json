@@ -1,0 +1,38 @@
+{
+  "name": "S-Flairs",
+  "version": "0.1.0",
+  "description": "FlairsTech Jira Smart Assistant",
+  "permissions": ["storage", "tabs" ,"contextMenus","activeTab"],
+  "host_permissions": ["https://*.atlassian.net/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*.atlassian.net/*"],
+      "js": ["contentScript.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "assets/bookmark.png",
+        "assets/play.png",
+        "assets/delete.png",
+        "assets/save.png"
+      ],
+      "matches": ["https://*.atlassian.net/*"]
+    }
+  ],
+  "action": {
+    "default_icon": {
+      "16": "assets/ext-icon.png",
+      "24": "assets/ext-icon.png",
+      "32": "assets/ext-icon.png"
+    },
+    "default_title": "S-Flairs",
+    "default_popup": "popup.html",
+    "default_position": "center"
+  },
+  "manifest_version": 3
+}
