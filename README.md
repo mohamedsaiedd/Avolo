@@ -1,3 +1,4 @@
 # S-Flairs
-![alt text](https://ibb.co/LxM5JmT)
+![Alt text](https://ibb.co/LxM5JmT)
+
 smart chrome extention  
