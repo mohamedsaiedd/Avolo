@@ -1,18 +1,22 @@
 {
-  "name": "S-Flairs",
-  "version": "0.1.0",
-  "description": "FlairsTech Jira Smart Assistant",
-  "permissions": ["storage", "tabs" ,"contextMenus","activeTab"],
-  "host_permissions": ["https://*.atlassian.net/*"],
+  "name": "Avolo",
+  "version": "0.1.2",
+  "description": "Avolo Jira Ai Assistant",
+  "permissions": ["storage", "tabs" ,"contextMenus","activeTab", "sidePanel" ,"scripting"],
+  "host_permissions": ["<all_urls>"],
   "background": {
-    "service_worker": "background.js"
+    "service_worker": "background.js",
+    "type": "module"
   },
   "content_scripts": [
     {
-      "matches": ["https://*.atlassian.net/*"],
-      "js": ["contentScript.js"]
+      "matches": ["<all_urls>"],
+      "js": ["apifetch.js"]
     }
   ],
+  "side_panel": {
+    "default_path": "sidepanel.html"
+  },
   "web_accessible_resources": [
     {
       "resources": [
@@ -21,18 +25,21 @@
         "assets/delete.png",
         "assets/save.png"
       ],
-      "matches": ["https://*.atlassian.net/*"]
+      "matches": ["<all_urls>"]
     }
   ],
   "action": {
     "default_icon": {
-      "16": "assets/ext-icon.png",
-      "24": "assets/ext-icon.png",
-      "32": "assets/ext-icon.png"
+      "16": "assets/favicon16.png",
+      "32": "assets/favicon32.png",
+      "72": "assets/favicon32.png",
+      "512": "assets/favicon32.png",
+      "128": "assets/favicon128.png"
+      
     },
-    "default_title": "S-Flairs",
-    "default_popup": "popup.html",
-    "default_position": "center"
+    "default_title": "Avolo",
+    "default_popup": "popup.html"
   },
   "manifest_version": 3
 }
+

@@ -1,91 +1,137 @@
-<link href="popup.css" rel="stylesheet" type="text/css" />
-<script type="module" src="popup.js"></script>
-<script  src="https://unpkg.com/browse/jquery@3.3.1/dist/jquery.js"></script>
 
-
-<div class="container"> 
-  <a class="title">Modal body text goes here.</a>
-  <div class="bookmarks" id="bookmarks"></div>
-</div>
- 
-<div id="modal" class="modal" tabindex="-1">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Modal title</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="popup.css" rel="stylesheet" type="text/css" />
+   
+    
+    <title>Avolo</title>
+</head>
+<body >
+  <div class="container">
+    <header>
+      <div class="content">
+        <img src="./assets/ex-logo.png">
+        
+        <h1>
+          <span class="fw-bold"> Jira AI-Assistant</span> 
+          <span class="text-white-50">powered by <span class="text-100"><img src="./assets/ft.png" ></span></span>  
+        </h1>
       </div>
-      <div class="modal-body">
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
+    </header>
+    
+    <div id="placeholder">
+      <svg xmlns="http://www.w3.org/2000/svg" width="109.197" height="102.169" viewBox="0 0 429.197 422.169">
+        <g id="Group_236" data-name="Group 236" transform="translate(-762.587 301.439) rotate(-84)" opacity="0.995">
+          <g id="Icon_ionic-ios-chatbubbles" data-name="Icon ionic-ios-chatbubbles" transform="translate(365.088 728.416) rotate(82)">
+            <path id="Path_384" data-name="Path 384" d="M375.8,325.53a28.931,28.931,0,0,1,3.941-14.569,40.225,40.225,0,0,1,2.508-3.7,193.494,193.494,0,0,0,32.959-107.833C415.571,89.324,322.664,0,207.785,0,107.595,0,24,68.187,4.418,158.7A191.9,191.9,0,0,0,0,199.545C0,309.767,89.324,401.479,204.2,401.479c18.271,0,42.871-5.493,56.365-9.2s26.869-8.6,30.332-9.912a31.572,31.572,0,0,1,11.106-2.03,31.047,31.047,0,0,1,12.061,2.388l67.709,24a16.146,16.146,0,0,0,4.657,1.194,9.505,9.505,0,0,0,9.553-9.553,15.341,15.341,0,0,0-.6-3.224Z" transform="translate(0 0)" fill="#31277c"/>
+          </g>
+          <rect class="avolo" id="Rectangle_443" data-name="Rectangle 443" width="20.889" height="153.685" rx="10" transform="translate(117.601 982.789) rotate(-97)" fill="rgba(255,255,255,1)"/>
+          <rect class="avolo" id="Rectangle_444" data-name="Rectangle 444" width="20.889" height="153.685" rx="10" transform="translate(146.96 1013.76) rotate(-97)" fill="rgba(255,255,255,1)"/>
+          <rect class="avolo" id="Rectangle_445" data-name="Rectangle 445" width="20.889" height="153.685" rx="10" transform="translate(134.153 946.181) rotate(-97)" fill="rgba(255,255,255,1)"/>
+          <rect class="avolo" id="Rectangle_446" data-name="Rectangle 446" width="22.381" height="153.685" rx="11" transform="translate(173.1 908.326) rotate(-97)" fill="rgba(255,255,255,1)"/>
+          <rect class="avolo" id="Rectangle_447" data-name="Rectangle 447" width="20.889" height="153.685" rx="10" transform="translate(151.143 1047.822) rotate(-97)" fill="rgba(255,255,255,1)"/>
+        </g>
+      </svg>
     </div>
-  </div>
-</div>
+    <main>
+      <h2><strong> Task ID :<span id="taskId"></span></strong></h2>
+      <select id="taskElement" class=" form-select form-select-lg mb-3 " name="taskElements" aria-label="Default select example">
+        <option  selected disabled>select item</option>
+        <option value="label">Label</option>
+        <option value="description">Description</option>
+        <option value="acceptance_criteria">Acceptance Criteria</option>
+      </select>
+      
+      <div  class="form-floating mb-3 header">
+
+          <input type="text" disabled class="form-control" id="header" placeholder="name@example.com">
+          <label for="floatingInput">Task label</label>
+
+        <div  class="form-text">
+          Regenerate now the task elements using impactful words and phrasing with your smart assistant <strong>Avolo</strong>.
+        </div>
+    </div>
+
+      <!-- <label for="inputPassword5" class="form-label">Task label</label>
+      <input type="text" id="header" class="form-control" aria-describedby="passwordHelpBlock">
+      <br>
+       -->
+     
+
+
+      <!-- <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              <strong> Task Desciption:</strong> 
+            </button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+            <div id="exampleFormControlTextarea1" class="accordion-body">
+            </div>
+          </div>
+        </div> -->
+
+        <div  class="form-floating textArea">
+          <textarea disabled class="form-control" placeholder="Leave a comment here"  id="textArea" style="height: 100px"></textarea>
+          <label for="floatingTextarea2">Task Description</label>
+        </div>
+      
+      <br>
+
+      <div  class="form-floating mb-3 modifiedHeader">
+        <input  type="text" class="form-control" id="modifiedHeader" placeholder="name@example.com">
+        <label for="floatingInput">Modified label</label>
+      </div>
+
+      <div  class="form-floating modifiedTextArea">
+        <textarea class="form-control" placeholder="Leave a comment here"  id="modifiedTextArea" style="height: 100px"></textarea>
+        <label for="floatingTextarea2">Modified Description</label>
+      </div>
+
+      
+      <div  class="form-text">
+        <strong>Note : </strong>please do the refresh if the data not updated or rephrased immediately.
+      </div>
+      <br>
+      <br>
+      <!-- <h2>User</h2>
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
+        <span class="input-group-text" id="basic-addon2">@atlassian.net</span>
+      </div> -->
+
+      <!-- <h2>Idea</h2>
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
+        <button class="btn btn-outline-secondary" type="button" id="button-addon2">Add Idea</button>
+      </div> -->
 <!-- 
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        regenrate
+      </button> -->
+      <div class="btn-grouped">
 
-
-  <body data-new-gr-c-s-check-loaded="14.1137.0" data-gr-ext-installed=""><div id="cssdig-wrap">
-  <div id="cssdig-chrome" style="height: 193px; visibility: visible;">
-
-    <div id="cssdig-form">
-      <ul class="fail" style="display:none"></ul>
-      <div id="empty-message" style="display:none">Sorry, but I couldn't find any Diggable CSS on this page.</div>
-      <button class="btn btn--large btn--accent btn--full js-dig">Start Digging</button>
-      <div class="close js-cancel">x</div>
-    </div>
-
-    <div id="cssdig">
-      <div id="report-data">
-
-        <div class="tabs" id="report-tabs">
-          <ul class="tabs-nav">
-            <li class="active"><a href="#tab-1" id="tab-properties">Properties</a></li>
-            <li><a href="#tab-2" id="tab-selectors" class="not-shown">Selectors</a></li>
-          </ul>
-          <div class="tab-content flex flex--column flex-1">
-            <div class="flex flex-none push--bottom">
-              <h3>Properties<span id="property-length"></span></h3>
-              <button class="btn btn--small js-open-all anchor--right push--right">Open All</button>
-              <button class="btn btn--small btn--disabled js-close-all">Close All</button>
-            </div>
-            <div class="content">
-            </div>
-          </div>
-          <div class="tab-content flex flex--column flex-1" style="display:none">
-            <div id="specificity-table-controls" class="flex">
-              <h3 class="flex-1">Selectors<span id="selector-length"></span></h3>
-              <h3 id="sort-specificity" class="active">Specificity</h3>
-              <h3 id="sort-length">Length</h3>
-            </div>
-            <div class="flex-1 overflow-y">
-              <table id="specificity-table">
-                <thead>
-                  <tr>
-                    <th>Selectors</th>
-                    <th>Specificity</th>
-                    <th>Length</th>
-                  </tr>
-                </thead>
-              </table>
-            </div>
-          </div>
+        <div>
+          <button type="button" class="btn btn-primary" id="refresh" data-toggle="tooltip" data-placement="top" data-title="">Refresh</button>
+          <button type="button" class="btn btn-primary" id="Update">Update</button>
         </div>
-
-        <div id="report-css">
-          <div class="flex flex-none push--bottom">
-            <h3>Combined CSS<span id="line-length"></span></h3>
-            <button class="btn btn--small btn--disabled js-css-reset anchor--right">Reset</button>
-          </div>
-          <div class="content">
-            <pre id="css-code"></pre>
-          </div>
-        </div>
+        <button type="button" class="btn btn-primary " id="Rephrase"><img  src="./assets/logo-gpt.png"><span>Rephrase</span> </button>
+        
       </div>
-    </div>
-    <div class="close js-cancel">×</div>
+
+
+    </main>
   </div>
-</div>
-</body> -->
+  
+</body>
+
+  <script defer type="module" src="bootstrap.js"></script>
+  <!-- <script defer type="module" src="contentScript.js"></script> -->
+  <script defer type="module" src="popup.js"></script>
+</html>
+
