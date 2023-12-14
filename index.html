@@ -1,11 +1,1293 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<html lang="en-us" q:container="paused" q:version="0.16.1" q:render="ssr" q:base="/build/">
+<!--qv q:id=0 q:key=3scc:pY_0--><!--qv q:id=1 q:key=TxCF:35_3--><!--qv q:s q:sref=1 q:key=-->
+
+<head q:head>
+    <meta charSet="utf-8" q:head>
+    <link rel="manifest" href="/manifest.json" q:head><!--qv q:id=2 q:key=lsYH:35_0-->
+    <title q:head>Avolo - chrome extention</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" q:head>
+    <link rel="icon" type="image/png" href="/images/favicon16.png" q:head>
+
+    <style q:style="avnanb-0" hidden>
+        body {
+            background: linear-gradient(180deg, #0e0a2c 0%, #3a2ab3 100%);
+            color: #fff;
+            overflow-x: hidden;
+            position: relative
+        }
+        .avolo-icon {
+            width: 50px;
+            margin-right: 10px;
+            height: 99px;
+        }
+        .avolo {
+            animation: kaboom 0.6s ease alternate infinite;
+
+            &:nth-child(2) {
+                animation-delay: 0.1s;
+            }
+
+            &:nth-child(3) {
+                animation-delay: 0.2s;
+            }
+
+            &:nth-child(4) {
+                animation-delay: 0.3s;
+            }
+
+            &:nth-child(5) {
+                animation-delay: 0.4s;
+            }
+            }
+
+        @keyframes kaboom {
+        0% {
+            height: 123.685px;
+        }
+
+        100% {
+            height: 50px;
+        }
+        }
+        ::-webkit-scrollbar {
+            width: 5px
+        }
+
+        ::-webkit-scrollbar-track {
+            background: inherit
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, .05);
+            border-radius: 99px
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(255, 255, 255, .1)
+        }
+
+        *:focus {
+            outline: none
+        }
+
+        * {
+            box-sizing: border-box;
+            -webkit-font-smoothing: antialiased
+        }
+
+        html {
+            line-height: 1.15;
+            -webkit-text-size-adjust: 100%;
+            -moz-text-size-adjust: 100%;
+            text-size-adjust: 100%
+        }
+
+        body {
+            margin: 0
+        }
+
+        main {
+            display: block
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        p {
+            margin: 0
+        }
+
+        a {
+            background-color: transparent;
+            color: inherit;
+            text-decoration: none
+        }
+
+        b,
+        strong {
+            font-weight: bolder
+        }
+
+        img {
+            border-style: none;
+            -webkit-user-drag: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none
+        }
+
+        button {
+            cursor: pointer
+        }
+
+        button,
+        input {
+            background-color: transparent;
+            border: 1px solid transparent;
+            font-family: inherit;
+            font-size: 100%;
+            line-height: 1.15;
+            margin: 0
+        }
+
+        input:focus {
+            outline: none
+        }
+
+        button,
+        input {
+            overflow: visible
+        }
+
+        button,
+        select {
+            text-transform: none
+        }
+
+        button {
+            -webkit-appearance: button;
+            -moz-appearance: button;
+            appearance: button
+        }
+
+        button::-moz-focus-inner {
+            border-style: none;
+            padding: 0
+        }
+
+        button:-moz-focusring {
+            outline: 1px dotted ButtonText
+        }
+
+        [type=checkbox],
+        [type=radio] {
+            box-sizing: border-box;
+            padding: 0
+        }
+
+        li {
+            list-style: none
+        }
+
+        svg {
+            display: block
+        }
+
+        ul {
+            padding-left: 0
+        }
+
+        @font-face {
+            font-display: swap;
+            font-family: Archivo;
+            font-style: normal;
+            font-weight: 700;
+            src: local("Archivo Bold"), local("Archivo-Bold"), url(fonts/Archivo-Bold.woff2) format("woff2"), url(fonts/Archivo-Bold.woff) format("woff")
+        }
+
+        @font-face {
+            font-display: swap;
+            font-family: Archivo;
+            font-style: normal;
+            font-weight: 400;
+            src: local("Archivo Regular"), local("Archivo-Regular"), url(fonts/Archivo-Regular.woff2) format("woff2"), url(fonts/Archivo-Regular.woff) format("woff")
+        }
+
+        body {
+            font-family: Archivo, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Open Sans, Helvetica Neue, sans-serif
+        }
+
+        .container {
+            margin: 0 auto;
+            max-width: 1240px;
+            padding: 0 12px
+        }
+    </style>
 </head>
-<body>
-    Hello
-</body>
+
+<body lang="en"><!--qv q:id=3 q:key=AKet:35_1--><!--qv q:id=4 q:key=VkLN:--><!--qv q:id=5 q:key=bh6P:XF_0-->
+    <style q:style="9m8z46-0" hidden>
+        .body-background {
+            display: flex;
+            height: 150vw;
+            left: 0;
+            overflow: hidden;
+            pointer-events: none;
+            position: fixed;
+            top: -50vw;
+            transform: rotate(44.52deg);
+            width: -moz-max-content;
+            width: max-content;
+            z-index: 20
+        }
+
+        .body-background-line {
+            animation: bodyBackgroundLine 5s ease infinite;
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #fff 17.71%, rgba(255, 255, 255, 0) 34.9%, #fff 51.04%, rgba(255, 255, 255, 0) 67.19%, #fff 82.81%, rgba(255, 255, 255, 0) 100%);
+            height: 150%;
+            margin-right: 64px;
+            opacity: .03;
+            position: relative;
+            width: 1px
+        }
+
+        @keyframes bodyBackgroundLine {
+            0% {
+                transform: translate(0)
+            }
+
+            to {
+                transform: translateY(100%)
+            }
+        }
+    </style>
+    <div class="body-background">
+        <div style="top:-0%;animation-delay:0s" class="body-background-line" q:key="0"></div>
+        <div style="top:-5%;animation-delay:0.1s" class="body-background-line" q:key="1"></div>
+        <div style="top:-10%;animation-delay:0.2s" class="body-background-line" q:key="2"></div>
+        <div style="top:-15%;animation-delay:0.30000000000000004s" class="body-background-line" q:key="3"></div>
+        <div style="top:-20%;animation-delay:0.4s" class="body-background-line" q:key="4"></div>
+        <div style="top:-25%;animation-delay:0.5s" class="body-background-line" q:key="5"></div>
+        <div style="top:-0%;animation-delay:0.6000000000000001s" class="body-background-line" q:key="6"></div>
+        <div style="top:-5%;animation-delay:0.7000000000000001s" class="body-background-line" q:key="7"></div>
+        <div style="top:-10%;animation-delay:0.8s" class="body-background-line" q:key="8"></div>
+        <div style="top:-15%;animation-delay:0.9s" class="body-background-line" q:key="9"></div>
+        <div style="top:-20%;animation-delay:1s" class="body-background-line" q:key="10"></div>
+        <div style="top:-25%;animation-delay:1.1s" class="body-background-line" q:key="11"></div>
+        <div style="top:-0%;animation-delay:1.2000000000000002s" class="body-background-line" q:key="12"></div>
+        <div style="top:-5%;animation-delay:1.3s" class="body-background-line" q:key="13"></div>
+        <div style="top:-10%;animation-delay:1.4000000000000001s" class="body-background-line" q:key="14"></div>
+        <div style="top:-15%;animation-delay:1.5s" class="body-background-line" q:key="15"></div>
+        <div style="top:-20%;animation-delay:1.6s" class="body-background-line" q:key="16"></div>
+        <div style="top:-25%;animation-delay:1.7000000000000002s" class="body-background-line" q:key="17"></div>
+        <div style="top:-0%;animation-delay:1.8s" class="body-background-line" q:key="18"></div>
+        <div style="top:-5%;animation-delay:1.9000000000000001s" class="body-background-line" q:key="19"></div>
+        <div style="top:-10%;animation-delay:2s" class="body-background-line" q:key="20"></div>
+        <div style="top:-15%;animation-delay:2.1s" class="body-background-line" q:key="21"></div>
+        <div style="top:-20%;animation-delay:2.2s" class="body-background-line" q:key="22"></div>
+        <div style="top:-25%;animation-delay:2.3000000000000003s" class="body-background-line" q:key="23"></div>
+        <div style="top:-0%;animation-delay:2.4000000000000004s" class="body-background-line" q:key="24"></div>
+        <div style="top:-5%;animation-delay:2.5s" class="body-background-line" q:key="25"></div>
+        <div style="top:-10%;animation-delay:2.6s" class="body-background-line" q:key="26"></div>
+        <div style="top:-15%;animation-delay:2.7s" class="body-background-line" q:key="27"></div>
+        <div style="top:-20%;animation-delay:2.8000000000000003s" class="body-background-line" q:key="28"></div>
+        <div style="top:-25%;animation-delay:2.9000000000000004s" class="body-background-line" q:key="29"></div>
+    </div><!--/qv--><!--qv q:id=6 q:key=XthG:XF_1-->
+    <div class="star-animation" on:qvisible="q-de2df277.js#_hW[0]" q:id="7"></div><!--/qv-->
+    <div class="container"><!--qv q:id=8 q:key=EBJp:XF_2-->
+        <style q:style="xnq0pn-0" hidden>
+            .header {
+                align-items: center;
+                display: flex;
+                font-size: 24px;
+                justify-content: space-between;
+                padding: 75px 0 56px
+            }
+
+            @media screen and (max-width: 1240px) {
+                .header {
+                    justify-content: center
+                }
+            }
+
+            .header-me {
+                display: flex
+            }
+
+            .header-me-role {
+                opacity: .25
+            }
+
+            .header-nav {
+                display: flex
+            }
+
+            @media screen and (max-width: 1240px) {
+                .header-nav {
+                    display: none
+                }
+            }
+
+            .header-nav li:not(:last-child) {
+                margin-right: 36px
+            }
+
+            .header-nav-item {
+                color: #ffffff40;
+                transition: .45s cubic-bezier(.6, .6, 0, 1) color
+            }
+
+            .header-nav-item:hover {
+                color: #fff6
+            }
+        </style>
+        <div class="header">
+            <img src="./images/ex-logo.png" width="100">
+            <div class="header-me">
+                <div class="header-me-name">Avolo</div>
+                <div class="header-me-role"> ,Jira AI-Assistant</div>
+            </div>
+        </div><!--/qv-->
+    </div><!--qv q:s q:sref=4 q:key=--><!--qv q:id=9 q:key=xYL1:-->
+    <div class="container"><!--qv q:id=a q:key=0rd9:H1_0-->
+        <style q:style="m2km4a-0" hidden>
+            .cards {
+                display: grid;
+                grid-gap: 20px;
+                grid-template-columns: repeat(12, 1fr)
+            }
+
+            @media screen and (max-width: 1240px) {
+                .cards {
+                    grid-gap: 10px;
+                    grid-template-columns: 1fr
+                }
+
+                .cards>* {
+                    border-radius: 15px !important;
+                    grid-column: 1/2 !important
+                }
+            }
+
+            .cards>* {
+                isolation: isolate;
+                overflow: hidden;
+                position: relative
+            }
+
+            .card-hello {
+                border-radius: 25px 50px 5px;
+                grid-column: 1/9
+            }
+
+            .card-hello-right {
+                border-radius: 50px 25px 50px 5px;
+                grid-column: 9/13
+            }
+
+            .card-currently {
+                border-radius: 50px 5px 5px 25px;
+                grid-column: 1/6
+            }
+
+            .card-wope {
+                border-radius: 5px 50px 25px 5px;
+                grid-column: 6/13
+            }
+
+            .card-skills {
+                border-radius: 25px 50px 5px 25px;
+                grid-column: 1/10
+            }
+
+            .card-contact {
+                border-radius: 50px 25px 50px 5px;
+                grid-column: 10/13
+            }
+        </style>
+        <div class="cards"><!--qv q:id=b q:key=wOXj:0F_0-->
+            <style q:style="dxcgph-0" hidden>
+                .card-hello {
+                    background-size: cover;
+                    padding: 51px 58px
+                }
+
+                .card-hello:before {
+                    background: linear-gradient(18.48deg, rgba(255, 255, 255, .25) 2.76%, rgba(255, 255, 255, 0) 17.23%), linear-gradient(200.6deg, rgba(255, 255, 255, .25) 4.13%, rgba(255, 255, 255, 0) 20.54%);
+                    border-radius: inherit;
+                    content: "";
+                    inset: 0;
+                    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+                    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+                    mask-composite: xor;
+                    -webkit-mask-composite: xor;
+                    mask-composite: exclude;
+                    padding: 1px;
+                    pointer-events: none;
+                    position: absolute
+                }
+
+                .card-hello-background {
+                    animation: rotateCardHelloBackground 100s linear infinite;
+                    height: 1010px;
+                    left: 50%;
+                    pointer-events: none;
+                    position: absolute;
+                    top: 50%;
+                    transform: translate(-50%, -50%);
+                    width: 1010px;
+                    z-index: 1
+                }
+
+                .card-hello-top {
+                    align-items: center;
+                    display: flex;
+                    justify-content: space-between;
+                    margin-bottom: 39px;
+                    position: relative;
+                    z-index: 2
+                }
+
+                .card-hello-top-me {
+                    align-items: center;
+                    display: flex
+                }
+
+                .card-hello-top-me-title {
+                    font-size: 20px;
+                    margin-bottom: 2px
+                }
+
+                .card-hello-top-me-role {
+                    font-size: 14px;
+                    opacity: .32
+                }
+
+                .card-hello-top-me-memoji {
+                    height: 48px;
+                    margin-right: 24px;
+                    width: 48px
+                }
+
+                .card-hello-top-social {
+                    align-items: center;
+                    display: flex
+                }
+
+                .card-hello-top-social-item {
+                    align-items: center;
+                    background: rgba(255, 255, 255, .02);
+                    border-radius: 6px;
+                    color: #fff;
+                    display: flex;
+                    height: 40px;
+                    justify-content: center;
+                    position: relative;
+                    transition: .45s cubic-bezier(.6, .6, 0, 1) background-color, .45s cubic-bezier(.6, .6, 0, 1) transform;
+                    width: 40px
+                }
+
+                .card-hello-top-social-item:before {
+                    background: linear-gradient(180deg, rgba(255, 255, 255, .04) 0%, rgba(255, 255, 255, 0) 100%);
+                    border-radius: inherit;
+                    content: "";
+                    inset: 0;
+                    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+                    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+                    mask-composite: xor;
+                    -webkit-mask-composite: xor;
+                    mask-composite: exclude;
+                    padding: 1px;
+                    pointer-events: none;
+                    position: absolute
+                }
+
+                .card-hello-top-social-item:hover {
+                    background-color: #ffffff0d;
+                    transform: scale(.95)
+                }
+
+                .card-hello-top-social-item svg {
+                    height: 24px
+                }
+
+                .card-hello-top-social-item:not(:last-child) {
+                    margin-right: 12px
+                }
+
+                .card-hello-title {
+                    font-size: 46px;
+                    margin-bottom: 26px;
+                    max-width: 800px
+                }
+
+                .card-hello-description {
+                    font-size: 20px;
+                    line-height: 34px;
+                    max-width: 483px;
+                    opacity: .6
+                }
+
+                @media screen and (max-width: 1240px) {
+                    .card-hello {
+                        padding: 22px
+                    }
+
+                    .card-hello-top {
+                        align-items: flex-start;
+                        flex-direction: column;
+                        margin-bottom: 22px
+                    }
+
+                    .card-hello-top-me {
+                        margin-bottom: 12px
+                    }
+
+                    .card-hello-title {
+                        font-size: 36px
+                    }
+
+                    .card-hello-description {
+                        font-size: 16px;
+                        line-height: 28px
+                    }
+                }
+
+                @keyframes rotateCardHelloBackground {
+                    0% {
+                        transform: translate(-50%, -50%) rotate(0)
+                    }
+
+                    to {
+                        transform: translate(-50%, -50%) rotate(360deg)
+                    }
+                }
+            </style>
+            <div class="card-hello"><img src="/images/card-hello-background.png" alt="Card hello background"
+                    class="card-hello-background">
+                <div class="card-hello-top">
+                    <div class="card-hello-top-me">
+                        <svg class="avolo-icon" xmlns="http://www.w3.org/2000/svg" width="109.197" height="102.169"
+                            viewBox="0 0 429.197 422.169">
+                            <g id="Group_236" data-name="Group 236" transform="translate(-762.587 301.439) rotate(-84)"
+                                opacity="0.995">
+                                <g id="Icon_ionic-ios-chatbubbles" data-name="Icon ionic-ios-chatbubbles"
+                                    transform="translate(365.088 728.416) rotate(82)">
+                                    <path id="Path_384" data-name="Path 384"
+                                        d="M375.8,325.53a28.931,28.931,0,0,1,3.941-14.569,40.225,40.225,0,0,1,2.508-3.7,193.494,193.494,0,0,0,32.959-107.833C415.571,89.324,322.664,0,207.785,0,107.595,0,24,68.187,4.418,158.7A191.9,191.9,0,0,0,0,199.545C0,309.767,89.324,401.479,204.2,401.479c18.271,0,42.871-5.493,56.365-9.2s26.869-8.6,30.332-9.912a31.572,31.572,0,0,1,11.106-2.03,31.047,31.047,0,0,1,12.061,2.388l67.709,24a16.146,16.146,0,0,0,4.657,1.194,9.505,9.505,0,0,0,9.553-9.553,15.341,15.341,0,0,0-.6-3.224Z"
+                                        transform="translate(0 0)" fill="#31277c" />
+                                </g>
+                                <rect class="avolo" id="Rectangle_443" data-name="Rectangle 443" width="20.889"
+                                    height="153.685" rx="10" transform="translate(117.601 982.789) rotate(-97)"
+                                    fill="rgba(255,255,255,1)" />
+                                <rect class="avolo" id="Rectangle_444" data-name="Rectangle 444" width="20.889"
+                                    height="153.685" rx="10" transform="translate(146.96 1013.76) rotate(-97)"
+                                    fill="rgba(255,255,255,1)" />
+                                <rect class="avolo" id="Rectangle_445" data-name="Rectangle 445" width="20.889"
+                                    height="153.685" rx="10" transform="translate(134.153 946.181) rotate(-97)"
+                                    fill="rgba(255,255,255,1)" />
+                                <rect class="avolo" id="Rectangle_446" data-name="Rectangle 446" width="22.381"
+                                    height="153.685" rx="11" transform="translate(173.1 908.326) rotate(-97)"
+                                    fill="rgba(255,255,255,1)" />
+                                <rect class="avolo" id="Rectangle_447" data-name="Rectangle 447" width="20.889"
+                                    height="153.685" rx="10" transform="translate(151.143 1047.822) rotate(-97)"
+                                    fill="rgba(255,255,255,1)" />
+                            </g>
+                        </svg>
+                        <div class="card-hello-top-me-text">
+                            <div class="card-hello-top-me-title">Hi, I’m Avolo.</div>
+                            <div class="card-hello-top-me-role">How can i help you !</div>
+                        </div>
+                    </div>
+                    <div class="card-hello-top-social">
+                       
+                            <a href="https://github.com/mohamedsaiedd/S-Flairs" target="_blank"
+                            aria-label="Follow me on Github" class="card-hello-top-social-item"><svg width="25"
+                                height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M8.62706 18.6281C8.62706 18.7219 8.51924 18.7969 8.38331 18.7969C8.22862 18.8109 8.12081 18.7359 8.12081 18.6281C8.12081 18.5344 8.22862 18.4594 8.36456 18.4594C8.50518 18.4453 8.62706 18.5203 8.62706 18.6281ZM7.16924 18.4172C7.13643 18.5109 7.23018 18.6187 7.37081 18.6469C7.49268 18.6937 7.63331 18.6469 7.66143 18.5531C7.68956 18.4594 7.60049 18.3516 7.45987 18.3094C7.33799 18.2766 7.20206 18.3234 7.16924 18.4172ZM9.24112 18.3375C9.10518 18.3703 9.01143 18.4594 9.02549 18.5672C9.03956 18.6609 9.16143 18.7219 9.30206 18.6891C9.43799 18.6562 9.53174 18.5672 9.51768 18.4734C9.50362 18.3844 9.37706 18.3234 9.24112 18.3375ZM12.3255 0.375C5.82393 0.375 0.850494 5.31094 0.850494 11.8125C0.850494 17.0109 4.12237 21.4594 8.79581 23.025C9.39581 23.1328 9.60674 22.7625 9.60674 22.4578C9.60674 22.1672 9.59268 20.5641 9.59268 19.5797C9.59268 19.5797 6.31143 20.2828 5.62237 18.1828C5.62237 18.1828 5.08799 16.8187 4.31924 16.4672C4.31924 16.4672 3.24581 15.7312 4.39424 15.7453C4.39424 15.7453 5.56143 15.8391 6.20362 16.9547C7.23018 18.7641 8.95049 18.2437 9.62081 17.9344C9.72862 17.1844 10.0333 16.6641 10.3708 16.3547C7.75049 16.0641 5.10674 15.6844 5.10674 11.175C5.10674 9.88594 5.46299 9.23906 6.21299 8.41406C6.09112 8.10938 5.69268 6.85312 6.33487 5.23125C7.31456 4.92656 9.56924 6.49688 9.56924 6.49688C10.5067 6.23438 11.5146 6.09844 12.513 6.09844C13.5114 6.09844 14.5192 6.23438 15.4567 6.49688C15.4567 6.49688 17.7114 4.92188 18.6911 5.23125C19.3333 6.85781 18.9349 8.10938 18.813 8.41406C19.563 9.24375 20.0224 9.89062 20.0224 11.175C20.0224 15.6984 17.2614 16.0594 14.6411 16.3547C15.0724 16.725 15.438 17.4281 15.438 18.5297C15.438 20.1094 15.4239 22.0641 15.4239 22.4484C15.4239 22.7531 15.6396 23.1234 16.2349 23.0156C20.9224 21.4594 24.1005 17.0109 24.1005 11.8125C24.1005 5.31094 18.8271 0.375 12.3255 0.375ZM5.40674 16.5422C5.34581 16.5891 5.35987 16.6969 5.43956 16.7859C5.51456 16.8609 5.62237 16.8938 5.68331 16.8328C5.74424 16.7859 5.73018 16.6781 5.65049 16.5891C5.57549 16.5141 5.46768 16.4812 5.40674 16.5422ZM4.90049 16.1625C4.86768 16.2234 4.91456 16.2984 5.00831 16.3453C5.08331 16.3922 5.17706 16.3781 5.20987 16.3125C5.24268 16.2516 5.19581 16.1766 5.10206 16.1297C5.00831 16.1016 4.93331 16.1156 4.90049 16.1625ZM6.41924 17.8312C6.34424 17.8922 6.37237 18.0328 6.48018 18.1219C6.58799 18.2297 6.72393 18.2437 6.78487 18.1688C6.84581 18.1078 6.81768 17.9672 6.72393 17.8781C6.62081 17.7703 6.48018 17.7563 6.41924 17.8312ZM5.88487 17.1422C5.80987 17.1891 5.80987 17.3109 5.88487 17.4188C5.95987 17.5266 6.08643 17.5734 6.14737 17.5266C6.22237 17.4656 6.22237 17.3438 6.14737 17.2359C6.08174 17.1281 5.95987 17.0813 5.88487 17.1422Z"
+                                    fill="currentColor"></path>
+                            </svg></a></div>
+                </div>
+                <div class="card-hello-title">Avolo, your Jira AI chrome extension Assistant .</div>
+                <div class="card-hello-description">Avolo leverages cutting-edge natural language processing and 
+                    machine learning algorithms to assist you in rephrasing and regenerating Jira ticket titles, descriptions, 
+                    and acceptance criteria with precision and efficiency.</div>
+            </div><!--/qv--><!--qv q:id=c q:key=lOy0:0F_1-->
+            <style q:style="u7avs0-0" hidden>
+                .card-hello-right {
+                    background: #271c76
+                }
+
+                .card-hello-right-content {
+                    height: 100%
+                }
+
+                .card-hello-right-memoji {
+                    height: 100%;
+                    -o-object-fit: contain;
+                    object-fit: contain;
+                    -o-object-position: bottom center;
+                    object-position: bottom center;
+                    position: relative;
+                    width: 100%;
+                    z-index: 6
+                }
+
+                .card-hello-right-circle {
+                    animation: cardHelloRightCircleScale 6s ease infinite;
+                    background: #fff;
+                    border-radius: 50%;
+                    bottom: 0;
+                    left: 50%;
+                    position: absolute;
+                    transform: translate(-50%, 50%)
+                }
+
+                .card-hello-right-circle:nth-child(1) {
+                    animation-delay: .2s;
+                    height: 400px;
+                    width: 400px;
+                    z-index: 4
+                }
+
+                .card-hello-right-circle:nth-child(2) {
+                    animation-delay: .4s;
+                    height: 480px;
+                    width: 480px;
+                    z-index: 3
+                }
+
+                .card-hello-right-circle:nth-child(3) {
+                    animation-delay: .6s;
+                    height: 560px;
+                    width: 560px;
+                    z-index: 2
+                }
+
+                .card-hello-right-circle:nth-child(4) {
+                    animation-delay: .8s;
+                    height: 640px;
+                    width: 640px;
+                    z-index: 1
+                }
+
+                .card-hello-right-circle:nth-child(5) {
+                    animation-delay: 1s;
+                    height: 720px;
+                    width: 720px;
+                    z-index: 0
+                }
+
+                .card-hello-right-circle:nth-child(2) {
+                    opacity: .3
+                }
+
+                .card-hello-right-circle:nth-child(3) {
+                    opacity: .225
+                }
+
+                .card-hello-right-circle:nth-child(4) {
+                    opacity: .15
+                }
+
+                .card-hello-right-circle:nth-child(5) {
+                    opacity: .075
+                }
+
+                @keyframes cardHelloRightCircleScale {
+
+                    0%,
+                    30%,
+                    to {
+                        transform: translate(-50%, 50%) scale(1)
+                    }
+
+                    15% {
+                        transform: translate(-50%, 50%) scale(.95)
+                    }
+                }
+            </style>
+            <div class="card-hello-right" on:qvisible="q-3c37ceaa.js#_hW[0]" q:id="d">
+                <div class="card-hello-right-content" q:id="e"><img src="/images/avolo.png"
+                        alt="Card hello right memoji" class="card-hello-right-memoji">
+                    <div class="card-hello-right-circles">
+                        <div class="card-hello-right-circle" q:key="0"></div>
+                        <div class="card-hello-right-circle" q:key="1"></div>
+                        <div class="card-hello-right-circle" q:key="2"></div>
+                        <div class="card-hello-right-circle" q:key="3"></div>
+                        <div class="card-hello-right-circle" q:key="4"></div>
+                    </div><!--qv q:id=f q:key=XthG:2B_0-->
+                    <div class="star-animation" on:qvisible="q-de2df277.js#_hW[0]" q:id="g"></div><!--/qv-->
+                </div>
+            </div><!--/qv--><!--qv q:id=h q:key=6SwM:0F_2-->
+            <style q:style="l7h9q-0" hidden>
+                .card-currently {
+                    background: linear-gradient(129.93deg, #271c76 0%, #271c76 100%);
+                    height: 554px;
+                    padding: 57px 0 57px 54px
+                }
+
+                .card-currently-background {
+                    height: auto;
+                    left: 0;
+                    pointer-events: none;
+                    position: absolute;
+                    top: 0;
+                    width: 100%;
+                    z-index: 2
+                }
+
+                .card-currently-squares {
+                    height: 415.26px;
+                    left: 163px;
+                    pointer-events: none;
+                    position: absolute;
+                    top: 340px;
+                    width: 465.26px;
+                    z-index: 3
+                }
+
+                .card-currently-square {
+                    -webkit-backdrop-filter: blur(6px);
+                    backdrop-filter: blur(6px);
+                    background: linear-gradient(225deg, rgba(255, 255, 255, .6) 7.37%, rgba(255, 255, 255, 0) 95.08%);
+                    border: 1px solid rgba(255, 255, 255, .5);
+                    border-radius: 40px;
+                    position: absolute;
+                    transform: rotate(-45deg)
+                }
+
+                .card-currently-square:nth-child(1) {
+                    z-index: 3
+                }
+
+                .card-currently-square:nth-child(2) {
+                    z-index: 2
+                }
+
+                .card-currently-square:nth-child(3) {
+                    z-index: 1
+                }
+
+                .card-currently-square:nth-child(4) {
+                    z-index: 0
+                }
+
+                .card-currently-square:nth-child(1) {
+                    -webkit-backdrop-filter: none;
+                    backdrop-filter: none;
+                    background-color: #fff;
+                    border: 0;
+                    border-radius: 20px;
+                    height: 91px;
+                    left: 170px;
+                    top: 168px;
+                    width: 91px
+                }
+
+                .card-currently-square:nth-child(2) {
+                    height: 200px;
+                    left: 115px;
+                    top: 113px;
+                    width: 200px
+                }
+
+                .card-currently-square:nth-child(3) {
+                    height: 221px;
+                    left: 0;
+                    top: 56px;
+                    width: 221px
+                }
+
+                .card-currently-square:nth-child(4) {
+                    height: 288px;
+                    left: 72px;
+                    top: 0;
+                    width: 288px
+                }
+
+                .card-currently-title {
+                    color: #ffffffb3;
+                    font-size: 56px
+                }
+
+                .card-currently-title span {
+                    color: #fff;
+                    display: block
+                }
+
+                .card-currently-description {
+                    font-size: 20px;
+                    font-weight: 300;
+                    line-height: 28px;
+                    margin-top: 18px;
+                    max-width: 250px;
+                    opacity: .6
+                }
+
+                @media screen and (max-width: 1240px) {
+                    .card-currently {
+                        height: 300px;
+                        padding: 22px
+                    }
+
+                    .card-currently-title {
+                        font-size: 32px
+                    }
+
+                    .card-currently-description {
+                        font-size: 16px;
+                        max-width: 200px
+                    }
+
+                    .card-currently-squares {
+                        left: 112px;
+                        top: 136px
+                    }
+                }
+            </style>
+            <div id="currently" class="card-currently">
+                <div class="card-currently-title">Currently I’m working with<span>GPT 3.5 turbo</span></div>
+                <div class="card-currently-description">Your collaborative partner in project management, 
+                </div>
+                <!--qv q:id=i q:key=XthG:PL_0-->
+                <div class="star-animation" on:qvisible="q-de2df277.js#_hW[0]" q:id="j"></div>
+                <!--/qv--><!--qv q:id=k q:key=pd7A:PL_1-->
+                <style q:style="adldhd-0" hidden>
+                    .lazy-image {
+                        display: block;
+                        transition: 1s cubic-bezier(.6, .6, 0, 1) opacity
+                    }
+
+                    .lazy-image-hidden {
+                        opacity: 0
+                    }
+                </style><img height="1" width="1" src alt="Background of card currently"
+                    class="lazy-image lazy-image-hidden card-currently-background"
+                    on:load="q-d96e3eda.js#s_Deti9nTnz3Q[0]" on:qvisible="q-d96e3eda.js#_hW[1]" q:id="l"><!--/qv-->
+                <div class="card-currently-squares">
+                    <div class="card-currently-square" q:key="0"></div>
+                    <div class="card-currently-square" q:key="1"></div>
+                    <div class="card-currently-square" q:key="2"></div>
+                    <div class="card-currently-square" q:key="3"></div>
+                </div>
+            </div><!--/qv--><!--qv q:id=m q:key=e6k9:0F_3-->
+            <style q:style="2t0d95-0" hidden>
+                .card-wope {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    padding: 49px 58px 0
+                }
+
+                .card-wope:before {
+                    background: linear-gradient(112.59deg, rgba(255, 255, 255, 0) 83.32%, rgba(255, 255, 255, .1) 94.31%), linear-gradient(109.73deg, rgba(255, 255, 255, .1) 7.85%, rgba(255, 255, 255, 0) 19.46%);
+                    border-radius: inherit;
+                    content: "";
+                    inset: 0;
+                    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+                    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+                    mask-composite: xor;
+                    -webkit-mask-composite: xor;
+                    mask-composite: exclude;
+                    padding: 1px;
+                    pointer-events: none;
+                    position: absolute
+                }
+
+                .card-wope:before {
+                    z-index: 20
+                }
+
+                .card-wope-heading {
+                    position: relative;
+                    z-index: 2
+                }
+
+                .card-wope-title {
+                    align-items: center;
+                    display: flex;
+                    margin-bottom: 14px
+                }
+
+                .card-wope-title-domain {
+                    font-size: 32px
+                }
+
+                .card-wope-title-domain .com {
+                    opacity: .6
+                }
+
+                .card-wope-arrow {
+                    background-color: #ffffff1a;
+                    border-radius: 50%;
+                    margin-left: 14px;
+                    padding: 14px;
+                    transition: .45s cubic-bezier(.6, .6, 0, 1) background-color
+                }
+
+                .card-wope-arrow:hover {
+                    background-color: #ffffff26
+                }
+
+                .card-wope-description {
+                    font-size: 16px;
+                    margin-bottom: 25px;
+                    opacity: .5
+                }
+
+                .card-wope-preview {
+                    border-radius: 25px 25px 0 0;
+                    position: relative;
+                    width: 100%;
+                    z-index: 3
+                }
+
+                .card-wope-background {
+                    animation: cardWopeBackgroundOpacity 2s ease-in-out infinite;
+                    aspect-ratio: 1.27;
+                    height: 100%;
+                    left: 0;
+                    position: absolute;
+                    position: none;
+                    top: 0;
+                    width: 100%;
+                    z-index: 1
+                }
+
+                @media screen and (max-width: 1240px) {
+                    .card-wope {
+                        padding: 16px 20px 0
+                    }
+
+                    .card-wope-title {
+                        margin-bottom: 7px
+                    }
+
+                    .card-wope-title-domain {
+                        font-size: 20px
+                    }
+
+                    .card-wope-description {
+                        font-size: 14px;
+                        margin-bottom: 16px
+                    }
+
+                    .card-wope-arrow {
+                        padding: 7px
+                    }
+
+                    .card-wope-preview {
+                        border-radius: 15px 15px 0 0
+                    }
+                }
+
+                @keyframes cardWopeBackgroundOpacity {
+
+                    0%,
+                    to {
+                        opacity: 1
+                    }
+
+                    50% {
+                        opacity: .8
+                    }
+                }
+            </style>
+            <div class="card-wope" on:qvisible="q-1bec45bd.js#_hW[0]" q:id="n">
+                <div class="card-wope-heading">
+                    <div class="card-wope-title">
+                        <div class="card-wope-title-domain">Avolo<span class="com">.com</span></div><a
+                            href="" aria-label="Open &quot;wope.com&quot; in a new tab"
+                            class="card-wope-arrow"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M0.230287 0.840139L0.230733 1.12092C0.231027 1.30679 0.381543 1.4573 0.567412 1.4576L7.6245 1.4668L0.203495 8.88782C0.0731982 9.01811 0.0735366 9.23166 0.204247 9.36237L0.402294 9.56042C0.533004 9.69113 0.746556 9.69147 0.876853 9.56117L8.29786 2.14016L8.30905 9.19924C8.30934 9.38511 8.45986 9.53562 8.64573 9.53592L8.92651 9.53636C9.11238 9.53665 9.26242 9.38662 9.26212 9.20075L9.25087 0.854433C9.25058 0.668564 9.10006 0.518049 8.91419 0.517754L0.567882 0.506506C0.378058 0.506205 0.229993 0.65427 0.230287 0.840139Z"
+                                    fill="#D5B5FF"></path>
+                            </svg></a>
+                    </div>
+                    <h5>
+                        Smart Rephrasing:
+                    </h5>
+                    <div class="card-wope-description">Avolo understands the intricacies of Jira ticket
+                        language and effortlessly suggests refined titles
+                        and descriptions, ensuring clarity and coherence in 
+                        your project communication.</div>
+                        <h5>
+                            Dynamic Regeneration:
+                        </h5>
+                        <div class="card-wope-description">Avolo goes beyond simple rephrasing by dynamically
+                            regenerating ticket content, providing diverse and
+                            contextually appropriate variations for enhanced
+                            communication and documentation , aslo assists in crafting comprehensive and well-structured acceptance
+                                criteria. It analyzes your project requirements and proposes clear, concise, 
+                                and effective criteria to align with your project goals</div>
+                                <h5>
+                                    Efficiency and Time Savings:
+                                </h5>
+                                <div class="card-wope-description">With Avolo, you can significantly reduce the time spent on manual ticket
+                                    refinement. The AI assistant, accessible through the Chrome extension, 
+                                    accelerates the ticket creation and optimization process, allowing you to 
+                                    focus on more strategic aspects of your projects.</div>
+                                    <h5>
+                                        User-Friendly Interface:
+                                    </h5>
+                                    <div class="card-wope-description">
+                                    Avolo integrates seamlessly into your Jira environment as a Chrome extension, offering a 
+                                    user-friendly interface that enhances your overall experience. Its intuitive design ensures 
+                                    easy navigation and accessibility for users at all proficiency levels</div>
+                </div><!--qv q:id=o q:key=pd7A:f9_0--><img height="1" width="1" src alt="Background of Wope card"
+                    class="lazy-image lazy-image-hidden card-wope-background" on:load="q-d96e3eda.js#s_Deti9nTnz3Q[0]"
+                    on:qvisible="q-d96e3eda.js#_hW[1]" q:id="p"><!--/qv-->
+            </div><!--/qv--><!--qv q:id=r q:key=ob6i:0F_4-->
+            <style q:style="vdwik0-0" hidden>
+                .card-skills {
+                    --tree-size-multiplier: 1;
+                    align-items: center;
+                    display: flex;
+                    padding: 55px
+                }
+
+                .card-skills:before {
+                    background: linear-gradient(18.48deg, rgba(255, 255, 255, .1) 2.76%, rgba(255, 255, 255, 0) 17.23%), linear-gradient(200.6deg, rgba(255, 255, 255, .1) 4.13%, rgba(255, 255, 255, 0) 20.54%);
+                    border-radius: inherit;
+                    content: "";
+                    inset: 0;
+                    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+                    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+                    mask-composite: xor;
+                    -webkit-mask-composite: xor;
+                    mask-composite: exclude;
+                    padding: 1px;
+                    pointer-events: none;
+                    position: absolute
+                }
+
+                .card-skills-background {
+                    height: 100%;
+                    left: 0;
+                    pointer-events: none;
+                    position: absolute;
+                    top: 0;
+                    width: 100%
+                }
+
+                .card-skills-text {
+                    max-width: 260px
+                }
+
+                .card-skills-subtitle {
+                    margin-bottom: 14px
+                }
+
+                .card-skills-title {
+                    font-size: 32px;
+                    margin-bottom: 26px
+                }
+
+                .card-skills-description {
+                    font-size: 20px;
+                    line-height: 28px;
+                    opacity: .5
+                }
+
+                .card-skills-tree {
+                    height: 386px;
+                    -webkit-mask-image: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #fff 17.39%, #fff 85.24%, rgba(255, 255, 255, 0) 100%);
+                    mask-image: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #fff 17.39%, #fff 85.24%, rgba(255, 255, 255, 0) 100%);
+                    overflow: hidden;
+                    position: absolute;
+                    right: -100px;
+                    width: 752px
+                }
+
+                .card-skills-tree-inner {
+                    display: flex;
+                    transform: rotate(15deg)
+                }
+
+                .card-skills-tree-row {
+                    height: calc(1791.19px * var(--tree-size-multiplier));
+                    position: relative;
+                    transition: ease transform;
+                    width: calc(72px * var(--tree-size-multiplier))
+                }
+
+                .card-skills-tree-row:not(:last-child) {
+                    margin-right: calc(20px * var(--tree-size-multiplier))
+                }
+
+                .card-skills-tree-row:nth-child(1) {
+                    top: calc(25px * var(--tree-size-multiplier));
+                    transform: translateY(calc((-100% + 438px) * var(--tree-size-multiplier)))
+                }
+
+                .card-skills-tree-row:nth-child(2) {
+                    top: calc(-286px * var(--tree-size-multiplier));
+                    transform: translateY(calc((-100% + 1040px) * var(--tree-size-multiplier)))
+                }
+
+                .card-skills-tree-row:nth-child(3) {
+                    top: calc((569px + 25px) * -1 * var(--tree-size-multiplier));
+                    transform: translateY(calc(-150px * var(--tree-size-multiplier)));
+                    transition-duration: 1s
+                }
+
+                .card-skills-tree-row:nth-child(4) {
+                    top: calc(-1017px * var(--tree-size-multiplier));
+                    transform: translateY(calc((100% - 1080px) * var(--tree-size-multiplier)))
+                }
+
+                .card-skills-tree-row:nth-child(5) {
+                    top: calc(-1439px * var(--tree-size-multiplier));
+                    transform: translateY(calc((100% - 206px) * var(--tree-size-multiplier)))
+                }
+
+                .card-skills-tree-row:nth-child(1),
+                .card-skills-tree-row:nth-child(5) {
+                    transition-duration: 3s
+                }
+
+                .card-skills-tree-row:nth-child(2),
+                .card-skills-tree-row:nth-child(4) {
+                    transition-duration: 2s
+                }
+
+                .card-skills-in-view .card-skills-tree-row {
+                    transform: translate(0)
+                }
+
+                @media screen and (max-width: 1240px) {
+                    .card-skills {
+                        --tree-size-multiplier: .5;
+                        flex-direction: column;
+                        padding: 20px
+                    }
+
+                    .card-skills-subtitle {
+                        margin-bottom: 10px
+                    }
+
+                    .card-skills-title {
+                        font-size: 24px;
+                        margin-bottom: 20px
+                    }
+
+                    .card-skills-description {
+                        font-size: 16px;
+                        line-height: 24px
+                    }
+
+                    .card-skills-tree {
+                        bottom: 0;
+                        height: 200px;
+                        left: 160px;
+                        position: relative
+                    }
+
+                    .card-skills-tree-inner {
+                        margin-top: 57px
+                    }
+                }
+            </style>
+           
+            <style q:style="nmqrpf-0" hidden>
+                .card-contact {
+                    background: linear-gradient(311.97deg, #ffa51f 0%, #e93f0c 100%);
+                    padding: 38px
+                }
+
+                .card-contact-memoji {
+                    animation: contactMemojiFloating 8s ease infinite;
+                    bottom: -30px;
+                    height: 360px;
+                    left: 14px;
+                    pointer-events: none;
+                    position: absolute;
+                    transform-origin: center bottom;
+                    width: 360px
+                }
+
+                .card-contact-title {
+                    font-size: 28px;
+                    margin-bottom: 17px
+                }
+
+                .card-contact-description {
+                    font-size: 20px;
+                    line-height: 26px;
+                    margin-bottom: 38px;
+                    max-width: 170px;
+                    opacity: .7
+                }
+
+                .card-contact-buttons {
+                    background: rgba(255, 255, 255, .03);
+                    border: 1px solid rgba(255, 255, 255, .1);
+                    border-radius: 5px;
+                    width: -moz-max-content;
+                    width: max-content
+                }
+
+                .card-contact-button {
+                    align-items: center;
+                    display: flex;
+                    height: 70px;
+                    justify-content: center;
+                    transition: .45s cubic-bezier(.6, .6, 0, 1) background-color;
+                    width: 70px
+                }
+
+                .card-contact-button:hover {
+                    background-color: #ffffff06
+                }
+
+                .card-contact-button:first-child {
+                    border-bottom: 1px solid rgba(255, 255, 255, .15)
+                }
+
+                .card-contact-button svg {
+                    height: auto;
+                    width: 24px
+                }
+
+                @keyframes contactMemojiFloating {
+
+                    0%,
+                    to {
+                        transform: translate(0) scale(1)
+                    }
+
+                    50% {
+                        transform: translateY(5px) scale(.99)
+                    }
+                }
+            </style>
+        </div><!--/qv-->
+    </div><!--/qv--><!--/qv--><!--qv q:id=18 q:key=yas3:XF_4-->
+    <style q:style="pbugkz-0" hidden>
+        .footer {
+            padding: 100px 0;
+            text-align: center
+        }
+
+        .footer-copyright {
+            align-items: self-start;
+            display: flex;
+            font-size: 14px;
+            justify-content: end;
+            margin-bottom: 16px
+        }
+
+
+        @media screen and (max-width: 1240px) {
+            .footer-copyright {
+                font-size: 16px
+            }
+
+            .footer-see-ya {
+                font-size: 24px
+            }
+        }
+    </style>
+    <div class="footer container">
+        <div class="footer-copyright">Powered By:
+            <strong> <a href="https://flairstech.com/"> FLAIRSTECH</a></strong>
+                <!-- <img width="90px" src="./images/ft.png"> -->
+           </div>
+    </div><!--/qv--><!--/qv--><!--/qv-->
+    <script>((s, a, i, r) => { i = (e, t) => { t = document.querySelector("[q\\:base]"), t && a.active && a.active.postMessage({ type: "qprefetch", base: t.getAttribute("q:base"), ...e }) }, document.addEventListener("qprefetch", e => { const t = e.detail; a ? i(t) : t.bundles && s.push(...t.bundles) }), navigator.serviceWorker.register("/service-worker.js").then(e => { r = () => { a = e, i({ bundles: s }) }, e.installing ? e.installing.addEventListener("statechange", t => { t.target.state == "activated" && r() }) : e.active && r() }).catch(e => console.error(e)) })([])</script>
+</body><!--/qv--><!--/qv--><!--/qv-->
+<script
+    type="qwik/json">{"refs":{"7":"1l","10":"j 2c","12":"l 2e","14":"n 2g","17":"p 2i","d":"1p","g":"1r","j":"1t","l":"8 1w","n":"1z","p":"a 21","s":"24","u":"d 26","w":"f 28","y":"h 2a"},"ctx":{"1":{"w":"1j","c":"qc-c=15! qc-ic=1! qc-h=2! qc-l=3! qc-n=4!"},"2":{"h":"2k","s":"2! 3!"},"3":{"h":"2j","s":"1!"},"6":{"h":"14 0!","w":"1l","s":"5 1l"},"11":{"h":"2o x!","w":"2e","s":"2p 37 m l 2e"},"13":{"h":"2o y!","w":"2g","s":"2p 38 o n 2g"},"16":{"h":"2o z!","w":"2i","s":"2p 3c q p 2i"},"c":{"w":"1p"},"f":{"h":"14","w":"1r","s":"6 1r"},"i":{"h":"14","w":"1t","s":"7 1t"},"k":{"h":"2o r!","w":"1w","s":"2p 2q 9 8 1w"},"m":{"w":"1z"},"o":{"h":"2o s!","w":"21","s":"2p 2u b a 21"},"r":{"h":"2v","w":"24","s":"2w 22 c 24"},"t":{"h":"2o t!","w":"26","s":"2p 30 e d 26"},"v":{"h":"2o u!","w":"28","s":"2p 34 g f 28"},"x":{"h":"2o v!","w":"2a","s":"2p 35 i h 2a"},"z":{"h":"2o w!","w":"2c","s":"2p 36 k j 2c"}},"objs":[{"particles":"13"},{"contents":"3d"},{"title":"16","meta":"1a","links":"1b","styles":"1c","frontmatter":"1d"},{"href":"1e","pathname":"1f","query":"1g","params":"1h"},{"path":"1f"},"\u001210","\u001210","\u001210","\u00121u","\u00121u","\u00121u","\u00121u","\u00121u","\u00121u","\u00121u","\u00121u","\u00121u","\u00121u","\u00121u","\u00121u","\u00121u","\u00121u","\u00121u","\u00121u","\u00121u","\u00121u","\u00121u",{"src":"2l","class":"2m","alt":"2n"},{"src":"2r","alt":"2s","class":"2t"},{"src":"2x","alt":"2y","class":"2z"},{"src":"31","alt":"32","class":"33"},{"src":"31","alt":"32","class":"33"},{"src":"31","alt":"32","class":"33"},{"src":"31","alt":"32","class":"33"},{"src":"31","alt":"32","class":"33"},{"class":"39","src":"3a","alt":"3b"},true,100,"#21211e",{"number":"11","color":"12"},"\u0002q-de2df277.js#s_XthGDRcHy1s",{"headings":"3d","menu":"3d"},"Necati Koçlu - Front-end Developer","description","Hi, I'm Necati. I enjoy learning new things and try to overcome new challenges while analyzing how I improved through them.",{"name":"17","content":"18"},["19"],[],[],{},"https://website-q06p78qjv-necatikcl.vercel.app/","/",{},{},"\u0002q-6ae89b84.js#s_2Eo7WCpaqI8[15! 1! 2! 3d 3! 4!]","\u00032 a 1i #1","\u0002q-de2df277.js#s_RFL3dIDl0WY[5]","\u00031 1 1k #6","\u0012#e",0.1,"\u0002q-3c37ceaa.js#s_tARgfiutAkQ[1m 1n]","\u00031 2 1o #c","\u0002q-de2df277.js#s_RFL3dIDl0WY[6]","\u00031 1 1q #f","\u0002q-de2df277.js#s_RFL3dIDl0WY[7]","\u00031 1 1s #i",false,"\u0002q-d96e3eda.js#s_EZFsQJP8zak[9]","\u00031 4 1v #k","\u0012#q","\u0002q-1bec45bd.js#s_Tstj8u7K3s0[1x]","\u00031 2 1y #m","\u0002q-d96e3eda.js#s_EZFsQJP8zak[b]","\u00031 4 20 #o","\u0012#s","\u0002q-bb042c9c.js#s_xPkzu2u0Sb8[c 22]","\u00031 3 23 #r","\u0002q-d96e3eda.js#s_EZFsQJP8zak[e]","\u00031 4 25 #t","\u0002q-d96e3eda.js#s_EZFsQJP8zak[g]","\u00031 4 27 #v","\u0002q-d96e3eda.js#s_EZFsQJP8zak[i]","\u00031 4 29 #x","\u0002q-d96e3eda.js#s_EZFsQJP8zak[k]","\u00031 4 2b #z","\u0002q-d96e3eda.js#s_EZFsQJP8zak[m]","\u00031 4 2d #11","\u0002q-d96e3eda.js#s_EZFsQJP8zak[o]","\u00031 4 2f #13","\u0002q-d96e3eda.js#s_EZFsQJP8zak[q]","\u00031 4 2h #16","\u0002q-9a5e52c2.js#s_AKetNByE5TM","\u0002q-ed3242cd.js#s_lsYHOsR7tuA","/images/card-currently-background.png","card-currently-background","Background of card currently","\u0002q-d96e3eda.js#s_pd7AQCsCHrs","adldhd-0","\u0012#l","/images/card-wope-background.png","Background of Wope card","card-wope-background","\u0012#p","\u0002q-5353c0b4.js#s_ob6iZnwn2Pw","vdwik0-0","/images/card-skills-background.png","Card Skills Background","card-skills-background","\u0012#u","/images/card-skills-tree-row.png","Card Skills Tree Row","card-skills-tree-row","\u0012#w","\u0012#y","\u0012#10","\u0012#12","\u0012#14","card-contact-memoji","/images/card-contact-memoji.png","Memoji","\u0012#17","\u0001"],"subs":[["_2"],["0 #3 contents"],["0 #2 meta","0 #2 links","0 #2 styles","0 #2 title"],["0 #2 pathname"],["0 1j path"],["0 #6"],["0 #f"],["0 #i"],["0 #k"],["0 #k"],["0 #o"],["0 #o"],["0 #r"],["0 #t"],["0 #t"],["0 #v"],["0 #v"],["0 #x"],["0 #x"],["0 #z"],["0 #z"],["0 #11"],["0 #11"],["0 #13"],["0 #13"],["0 #16"],["0 #16"],["_2","1 #k r #l alt alt"],["_2","1 #o s #p alt alt"],["_2","1 #t t #u alt alt"],["_2","1 #v u #w alt alt"],["_2","1 #x v #y alt alt"],["_2","1 #z w #10 alt alt"],["_2","1 #11 x #12 alt alt"],["_2","1 #13 y #14 alt alt"],["_2","1 #16 z #17 alt alt"]]}</script>
+<script
+    type="module">document.dispatchEvent(new CustomEvent("qprefetch", { detail: { "bundles": ["q-de2df277.js", "q-5f7f05b5.js", "q-3c37ceaa.js", "q-d96e3eda.js", "q-1bec45bd.js", "q-fb277a7a.js", "q-bb042c9c.js", "q-9a5e52c2.js", "q-8ddf4bc5.js", "q-ed3242cd.js", "q-5353c0b4.js"] } }))</script>
+<script
+    id="qwikloader">((e, t) => { const n = "__q_context__", o = window, i = new Set, s = t => e.querySelectorAll(t), r = (e, t, n = t.type) => { s("[on" + e + "\\:" + n + "]").forEach((o => f(o, e, t, n))) }, a = (e, t) => e.getAttribute(t), l = t => { if (void 0 === t._qwikjson_) { let n = (t === e.documentElement ? e.body : t).lastElementChild; for (; n;) { if ("SCRIPT" === n.tagName && "qwik/json" === a(n, "type")) { t._qwikjson_ = JSON.parse(n.textContent.replace(/\\x3C(\/?script)/g, "<$1")); break } n = n.previousElementSibling } } }, c = (e, t) => new CustomEvent(e, { detail: t }), f = async (t, o, i, s = i.type) => { const r = "on" + o + ":" + s; t.hasAttribute("preventdefault:" + s) && i.preventDefault(); const c = t._qc_, f = null == c ? void 0 : c.li.filter((e => e[0] === r)); if (f && f.length > 0) { for (const e of f) await e[1].getFn([t, i], (() => t.isConnected))(i, t); return } const d = a(t, r); if (d) { const o = t.closest("[q\\:container]"), s = new URL(a(o, "q:base"), e.baseURI); for (const r of d.split("\n")) { const a = new URL(r, s), c = a.hash.replace(/^#?([^?[|]*).*$/, "$1") || "default", f = performance.now(), d = import(a.href.split("#")[0]); l(o); const p = b(await d, c), w = e[n]; if (t.isConnected) try { e[n] = [t, i, a], u("qsymbol", { symbol: c, element: t, reqTime: f }), await p(i, t) } finally { e[n] = w } } } }, u = (t, n) => { e.dispatchEvent(c(t, n)) }, b = (e, t) => { if (t in e) return e[t]; for (const n of Object.values(e)) if ("object" == typeof n && n && t in n) return n[t] }, d = e => e.replace(/([A-Z])/g, (e => "-" + e.toLowerCase())), p = async e => { let t = d(e.type), n = e.target; for (r("-document", e, t); n && n.getAttribute;)await f(n, "", e, t), n = e.bubbles && !0 !== e.cancelBubble ? n.parentElement : null }, w = e => { r("-window", e, d(e.type)) }, q = () => { var n; const r = e.readyState; if (!t && ("interactive" == r || "complete" == r) && (t = 1, u("qinit"), (null != (n = o.requestIdleCallback) ? n : o.setTimeout).bind(o)((() => u("qidle"))), i.has("qvisible"))) { const e = s("[on\\:qvisible]"), t = new IntersectionObserver((e => { for (const n of e) n.isIntersecting && (t.unobserve(n.target), f(n.target, "", c("qvisible", n))) })); e.forEach((e => t.observe(e))) } }, v = (e, t, n, o = !1) => e.addEventListener(t, n, { capture: o }), y = t => { for (const n of t) i.has(n) || (v(e, n, p, !0), v(o, n, w), i.add(n)) }; if (!e.qR) { const t = o.qwikevents; Array.isArray(t) && y(t), o.qwikevents = { push: (...e) => y(e) }, v(e, "readystatechange", q), q() } })(document);</script>
+<script>window.qwikevents.push("qvisible", "load")</script>
+
 </html>

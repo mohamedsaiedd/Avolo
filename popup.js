@@ -147,7 +147,7 @@
             //     modifiedDescriptionWrap.style.display = 'block'
             // }
             placeholderElement.style.display = 'none';
-        }, 200);
+        }, 20000);
 
     }
 
@@ -160,7 +160,7 @@
             placeholderElement.style.display = 'none';
             getContent()
             contentGetter()
-        }, 200);
+        }, 20000);
         
     }
 
@@ -173,7 +173,7 @@
         setTimeout(function () {
             placeholderElement.style.display = 'none';
             getContent()
-        }, 1000);
+        }, 10000);
 
         
     }
@@ -187,7 +187,7 @@
                 placeholderElement.style.display = 'none';
                 contentGetter()
                 getContent()
-            }, 5000);
+            }, 50000);
             
         }
         
@@ -212,7 +212,7 @@
             placeholderElement.style.display = 'none';
                 contentGetter()
                 getContent()
-            }, 1000);
+            }, 10000);
             
             
             

@@ -1,0 +1,1 @@
+import{a as o}from"./q-5f7f05b5.js";import{b as u}from"./q-5f7f05b5.js";const a=()=>{const[e,s]=o();e.value=!0;const r=new IntersectionObserver(([t])=>{e.value=t.isIntersecting},{threshold:.1});return r.observe(s.value),()=>r.disconnect()};export{u as _hW,a as s_xPkzu2u0Sb8};
