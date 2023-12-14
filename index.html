@@ -16,11 +16,13 @@
             overflow-x: hidden;
             position: relative
         }
+
         .avolo-icon {
             width: 50px;
             margin-right: 10px;
             height: 99px;
         }
+
         .avolo {
             animation: kaboom 0.6s ease alternate infinite;
 
@@ -39,17 +41,18 @@
             &:nth-child(5) {
                 animation-delay: 0.4s;
             }
-            }
+        }
 
         @keyframes kaboom {
-        0% {
-            height: 123.685px;
+            0% {
+                height: 123.685px;
+            }
+
+            100% {
+                height: 50px;
+            }
         }
 
-        100% {
-            height: 50px;
-        }
-        }
         ::-webkit-scrollbar {
             width: 5px
         }
@@ -583,18 +586,20 @@
                         </div>
                     </div>
                     <div class="card-hello-top-social">
-                       
-                            <a href="https://github.com/mohamedsaiedd/S-Flairs" target="_blank"
+
+                        <a href="https://github.com/mohamedsaiedd/avolo" target="_blank"
                             aria-label="Follow me on Github" class="card-hello-top-social-item"><svg width="25"
                                 height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path
                                     d="M8.62706 18.6281C8.62706 18.7219 8.51924 18.7969 8.38331 18.7969C8.22862 18.8109 8.12081 18.7359 8.12081 18.6281C8.12081 18.5344 8.22862 18.4594 8.36456 18.4594C8.50518 18.4453 8.62706 18.5203 8.62706 18.6281ZM7.16924 18.4172C7.13643 18.5109 7.23018 18.6187 7.37081 18.6469C7.49268 18.6937 7.63331 18.6469 7.66143 18.5531C7.68956 18.4594 7.60049 18.3516 7.45987 18.3094C7.33799 18.2766 7.20206 18.3234 7.16924 18.4172ZM9.24112 18.3375C9.10518 18.3703 9.01143 18.4594 9.02549 18.5672C9.03956 18.6609 9.16143 18.7219 9.30206 18.6891C9.43799 18.6562 9.53174 18.5672 9.51768 18.4734C9.50362 18.3844 9.37706 18.3234 9.24112 18.3375ZM12.3255 0.375C5.82393 0.375 0.850494 5.31094 0.850494 11.8125C0.850494 17.0109 4.12237 21.4594 8.79581 23.025C9.39581 23.1328 9.60674 22.7625 9.60674 22.4578C9.60674 22.1672 9.59268 20.5641 9.59268 19.5797C9.59268 19.5797 6.31143 20.2828 5.62237 18.1828C5.62237 18.1828 5.08799 16.8187 4.31924 16.4672C4.31924 16.4672 3.24581 15.7312 4.39424 15.7453C4.39424 15.7453 5.56143 15.8391 6.20362 16.9547C7.23018 18.7641 8.95049 18.2437 9.62081 17.9344C9.72862 17.1844 10.0333 16.6641 10.3708 16.3547C7.75049 16.0641 5.10674 15.6844 5.10674 11.175C5.10674 9.88594 5.46299 9.23906 6.21299 8.41406C6.09112 8.10938 5.69268 6.85312 6.33487 5.23125C7.31456 4.92656 9.56924 6.49688 9.56924 6.49688C10.5067 6.23438 11.5146 6.09844 12.513 6.09844C13.5114 6.09844 14.5192 6.23438 15.4567 6.49688C15.4567 6.49688 17.7114 4.92188 18.6911 5.23125C19.3333 6.85781 18.9349 8.10938 18.813 8.41406C19.563 9.24375 20.0224 9.89062 20.0224 11.175C20.0224 15.6984 17.2614 16.0594 14.6411 16.3547C15.0724 16.725 15.438 17.4281 15.438 18.5297C15.438 20.1094 15.4239 22.0641 15.4239 22.4484C15.4239 22.7531 15.6396 23.1234 16.2349 23.0156C20.9224 21.4594 24.1005 17.0109 24.1005 11.8125C24.1005 5.31094 18.8271 0.375 12.3255 0.375ZM5.40674 16.5422C5.34581 16.5891 5.35987 16.6969 5.43956 16.7859C5.51456 16.8609 5.62237 16.8938 5.68331 16.8328C5.74424 16.7859 5.73018 16.6781 5.65049 16.5891C5.57549 16.5141 5.46768 16.4812 5.40674 16.5422ZM4.90049 16.1625C4.86768 16.2234 4.91456 16.2984 5.00831 16.3453C5.08331 16.3922 5.17706 16.3781 5.20987 16.3125C5.24268 16.2516 5.19581 16.1766 5.10206 16.1297C5.00831 16.1016 4.93331 16.1156 4.90049 16.1625ZM6.41924 17.8312C6.34424 17.8922 6.37237 18.0328 6.48018 18.1219C6.58799 18.2297 6.72393 18.2437 6.78487 18.1688C6.84581 18.1078 6.81768 17.9672 6.72393 17.8781C6.62081 17.7703 6.48018 17.7563 6.41924 17.8312ZM5.88487 17.1422C5.80987 17.1891 5.80987 17.3109 5.88487 17.4188C5.95987 17.5266 6.08643 17.5734 6.14737 17.5266C6.22237 17.4656 6.22237 17.3438 6.14737 17.2359C6.08174 17.1281 5.95987 17.0813 5.88487 17.1422Z"
                                     fill="currentColor"></path>
-                            </svg></a></div>
+                            </svg></a>
+                    </div>
                 </div>
                 <div class="card-hello-title">Avolo, your Jira AI chrome extension Assistant .</div>
-                <div class="card-hello-description">Avolo leverages cutting-edge natural language processing and 
-                    machine learning algorithms to assist you in rephrasing and regenerating Jira ticket titles, descriptions, 
+                <div class="card-hello-description">Avolo leverages cutting-edge natural language processing and
+                    machine learning algorithms to assist you in rephrasing and regenerating Jira ticket titles,
+                    descriptions,
                     and acceptance criteria with precision and efficiency.</div>
             </div><!--/qv--><!--qv q:id=c q:key=lOy0:0F_1-->
             <style q:style="u7avs0-0" hidden>
@@ -832,7 +837,7 @@
             </style>
             <div id="currently" class="card-currently">
                 <div class="card-currently-title">Currently I’m working with<span>GPT 3.5 turbo</span></div>
-                <div class="card-currently-description">Your collaborative partner in project management, 
+                <div class="card-currently-description">Your collaborative partner in project management,
                 </div>
                 <!--qv q:id=i q:key=XthG:PL_0-->
                 <div class="star-animation" on:qvisible="q-de2df277.js#_hW[0]" q:id="j"></div>
@@ -846,9 +851,9 @@
                     .lazy-image-hidden {
                         opacity: 0
                     }
-                </style><img height="1" width="1" src alt="Background of card currently"
+                </style><img height="1" width="1" src 
                     class="lazy-image lazy-image-hidden card-currently-background"
-                    on:load="q-d96e3eda.js#s_Deti9nTnz3Q[0]" on:qvisible="q-d96e3eda.js#_hW[1]" q:id="l"><!--/qv-->
+                    on:load="./q-d96e3eda.js#s_Deti9nTnz3Q[0]" on:qvisible="q-d96e3eda.js#_hW[1]" q:id="l"><!--/qv-->
                 <div class="card-currently-squares">
                     <div class="card-currently-square" q:key="0"></div>
                     <div class="card-currently-square" q:key="1"></div>
@@ -981,10 +986,9 @@
             <div class="card-wope" on:qvisible="q-1bec45bd.js#_hW[0]" q:id="n">
                 <div class="card-wope-heading">
                     <div class="card-wope-title">
-                        <div class="card-wope-title-domain">Avolo<span class="com">.com</span></div><a
-                            href="" aria-label="Open &quot;wope.com&quot; in a new tab"
-                            class="card-wope-arrow"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
+                        <div class="card-wope-title-domain">Avolo<span class="com">.com</span></div><a href=""
+                            aria-label="Open &quot;wope.com&quot; in a new tab" class="card-wope-arrow"><svg width="10"
+                                height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path
                                     d="M0.230287 0.840139L0.230733 1.12092C0.231027 1.30679 0.381543 1.4573 0.567412 1.4576L7.6245 1.4668L0.203495 8.88782C0.0731982 9.01811 0.0735366 9.23166 0.204247 9.36237L0.402294 9.56042C0.533004 9.69113 0.746556 9.69147 0.876853 9.56117L8.29786 2.14016L8.30905 9.19924C8.30934 9.38511 8.45986 9.53562 8.64573 9.53592L8.92651 9.53636C9.11238 9.53665 9.26242 9.38662 9.26212 9.20075L9.25087 0.854433C9.25058 0.668564 9.10006 0.518049 8.91419 0.517754L0.567882 0.506506C0.378058 0.506205 0.229993 0.65427 0.230287 0.840139Z"
                                     fill="#D5B5FF"></path>
@@ -995,31 +999,33 @@
                     </h5>
                     <div class="card-wope-description">Avolo understands the intricacies of Jira ticket
                         language and effortlessly suggests refined titles
-                        and descriptions, ensuring clarity and coherence in 
+                        and descriptions, ensuring clarity and coherence in
                         your project communication.</div>
-                        <h5>
-                            Dynamic Regeneration:
-                        </h5>
-                        <div class="card-wope-description">Avolo goes beyond simple rephrasing by dynamically
-                            regenerating ticket content, providing diverse and
-                            contextually appropriate variations for enhanced
-                            communication and documentation , aslo assists in crafting comprehensive and well-structured acceptance
-                                criteria. It analyzes your project requirements and proposes clear, concise, 
-                                and effective criteria to align with your project goals</div>
-                                <h5>
-                                    Efficiency and Time Savings:
-                                </h5>
-                                <div class="card-wope-description">With Avolo, you can significantly reduce the time spent on manual ticket
-                                    refinement. The AI assistant, accessible through the Chrome extension, 
-                                    accelerates the ticket creation and optimization process, allowing you to 
-                                    focus on more strategic aspects of your projects.</div>
-                                    <h5>
-                                        User-Friendly Interface:
-                                    </h5>
-                                    <div class="card-wope-description">
-                                    Avolo integrates seamlessly into your Jira environment as a Chrome extension, offering a 
-                                    user-friendly interface that enhances your overall experience. Its intuitive design ensures 
-                                    easy navigation and accessibility for users at all proficiency levels</div>
+                    <h5>
+                        Dynamic Regeneration:
+                    </h5>
+                    <div class="card-wope-description">Avolo goes beyond simple rephrasing by dynamically
+                        regenerating ticket content, providing diverse and
+                        contextually appropriate variations for enhanced
+                        communication and documentation , aslo assists in crafting comprehensive and well-structured
+                        acceptance
+                        criteria. It analyzes your project requirements and proposes clear, concise,
+                        and effective criteria to align with your project goals</div>
+                    <h5>
+                        Efficiency and Time Savings:
+                    </h5>
+                    <div class="card-wope-description">With Avolo, you can significantly reduce the time spent on manual
+                        ticket
+                        refinement. The AI assistant, accessible through the Chrome extension,
+                        accelerates the ticket creation and optimization process, allowing you to
+                        focus on more strategic aspects of your projects.</div>
+                    <h5>
+                        User-Friendly Interface:
+                    </h5>
+                    <div class="card-wope-description">
+                        Avolo integrates seamlessly into your Jira environment as a Chrome extension, offering a
+                        user-friendly interface that enhances your overall experience. Its intuitive design ensures
+                        easy navigation and accessibility for users at all proficiency levels</div>
                 </div><!--qv q:id=o q:key=pd7A:f9_0--><img height="1" width="1" src alt="Background of Wope card"
                     class="lazy-image lazy-image-hidden card-wope-background" on:load="q-d96e3eda.js#s_Deti9nTnz3Q[0]"
                     on:qvisible="q-d96e3eda.js#_hW[1]" q:id="p"><!--/qv-->
@@ -1174,7 +1180,7 @@
                     }
                 }
             </style>
-           
+
             <style q:style="nmqrpf-0" hidden>
                 .card-contact {
                     background: linear-gradient(311.97deg, #ffa51f 0%, #e93f0c 100%);
@@ -1277,8 +1283,8 @@
     <div class="footer container">
         <div class="footer-copyright">Powered By:
             <strong> <a href="https://flairstech.com/"> FLAIRSTECH</a></strong>
-                <!-- <img width="90px" src="./images/ft.png"> -->
-           </div>
+            <!-- <img width="90px" src="./images/ft.png"> -->
+        </div>
     </div><!--/qv--><!--/qv--><!--/qv-->
     <script>((s, a, i, r) => { i = (e, t) => { t = document.querySelector("[q\\:base]"), t && a.active && a.active.postMessage({ type: "qprefetch", base: t.getAttribute("q:base"), ...e }) }, document.addEventListener("qprefetch", e => { const t = e.detail; a ? i(t) : t.bundles && s.push(...t.bundles) }), navigator.serviceWorker.register("/service-worker.js").then(e => { r = () => { a = e, i({ bundles: s }) }, e.installing ? e.installing.addEventListener("statechange", t => { t.target.state == "activated" && r() }) : e.active && r() }).catch(e => console.error(e)) })([])</script>
 </body><!--/qv--><!--/qv--><!--/qv-->
