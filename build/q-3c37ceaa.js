@@ -1,1 +1,0 @@
-import{a as r}from"./q-5f7f05b5.js";import{b as p}from"./q-5f7f05b5.js";const i=()=>{const[t,n]=r(),o=t.value.getBoundingClientRect(),e=o.top+o.height;t.value.style.transition="450ms ease transform",window.addEventListener("scroll",()=>{const s=(e-(e-window.scrollY))*n;t.value.style.transform=`translateY(${s}px)`})};export{p as _hW,i as s_tARgfiutAkQ};
