@@ -18,14 +18,14 @@
 //   }
 // });
 
-import {fetchData , updateData , generateData ,setTaskElement} from "./apifetch.js";
+import {fetchData , updateData , generateData ,setTaskElement , generateTestCases} from "./apifetch.js";
 
 try {
   chrome.runtime.onMessage.addListener(function (res , sender) {
-    const {message , prefs , pathname ,fullPath } = res
+    const {message , prefs , pathname } = res
     console.log('sender',sender);
     console.log('prefs',prefs);
-    // if(fullPath.includes('atlassian.net')){
+
       
       if (message === 'updateData') {
         updateData(pathname ,prefs);
@@ -41,7 +41,10 @@ try {
         setTaskElement(prefs)
       
       }
+      if (message === 'generateTestCases'){
+        generateTestCases(prefs)
       
+      }
       
   });
     

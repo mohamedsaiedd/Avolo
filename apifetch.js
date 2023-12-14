@@ -46,7 +46,7 @@ export function generateData(prefs) {
           },
         method: 'POST',
         body: JSON.stringify({
-            body: `rephrase this text ${prefs.modifiedLabel}`
+            body: `rephrase this text: ${prefs.modifiedLabel}`
         })
         
     }).then(resp => resp.json())
@@ -67,7 +67,7 @@ export function generateData(prefs) {
           },
         method: 'POST',
         body: JSON.stringify({
-            body: `rephrase this text ${prefs.modifiedDescription}`
+            body: `rephrase this text : ${prefs.modifiedDescription}`
         })
         
     }).then(resp => resp.json())
@@ -83,8 +83,35 @@ export function generateData(prefs) {
 }
     
 
+export function generateTestCases(prefs) {
+
+    console.log('testcases', prefs);
+
+    let gptServer = 'http://localhost:8000/avolo' 
+        
+    fetch(gptServer, {
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+          },
+        method: 'POST',
+        body: JSON.stringify({
+            body: `generate test cases for this ticket Description in some points : ${prefs.modifiedDescription}`
+        })
+        
+    }).then(resp => resp.json())
+    .then(json =>{ 
+
+            prefs.generatedTestCases = json.text
+            chrome.storage.local.set({'generatedTestCases': json.text})
+          
+    })
+}
 
 
+export function errorPage() {
+    
+}
 export function updateData(issueKey ,prefs) {
     console.log('prefsUpdateData', prefs);
     let ticketUrl = `https://mohamedsaiedfathallah.atlassian.net/rest/api/3/issue/${issueKey}`
