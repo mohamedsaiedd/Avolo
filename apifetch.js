@@ -13,13 +13,23 @@ export  function fetchData(issueKey,prefs) {
     .then(json => {
                 let description = json.fields.description.content[0].content[0].text
                 let label = json.fields.summary
-                
+                let acc_creatirea_array = json.fields.customfield_10032.content[0].content ;
+                let acceptanceCriteria = ''
+
+                for (const item of acc_creatirea_array ) { 
+                    if(item.text) {
+                        acceptanceCriteria += item.text + '\n';
+                    }
+                }
+
                 chrome.storage.local.set({'description': description})
                 chrome.storage.local.set({'modifiedDescription': description})
                 chrome.storage.local.set({'label': label})
                 chrome.storage.local.set({'modifiedLabel': label})
+                chrome.storage.local.set({'acceptanceCriteria': acceptanceCriteria})
+                chrome.storage.local.set({'modifiedAcceptanceCriteria': acceptanceCriteria})
             }
-            ) 
+            )
           
 }
 
@@ -58,7 +68,7 @@ export function generateData(prefs) {
     }).then(()=> {
         console.log('fetched modifiedLabel');
     })
-}else {
+}else  if (prefs.taskElement == "description") {
 
     fetch(gptServer, {
         headers: {
@@ -78,6 +88,26 @@ export function generateData(prefs) {
 
     }).then(()=> {
         console.log('fetched modifiedDescription');
+    })
+} else if (prefs.taskElement == "acceptance_criteria") {
+    fetch(gptServer, {
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+          },
+        method: 'POST',
+        body: JSON.stringify({
+            body: `rephrase this text : ${prefs.modifiedAcceptanceCriteria}`
+        })
+        
+    }).then(resp => resp.json())
+    .then(json =>{ 
+
+        prefs.modifiedAcceptanceCriteria = json.text
+        chrome.storage.local.set({'modifiedAcceptanceCriteria': json.text})
+
+    }).then(()=> {
+        console.log('fetched modifiedAcceptanceCriteria');
     })
 }
 }
@@ -110,7 +140,7 @@ export function generateTestCases(prefs) {
 
 
 export function errorPage() {
-    
+
 }
 export function updateData(issueKey ,prefs) {
     console.log('prefsUpdateData', prefs);
@@ -124,6 +154,7 @@ export function updateData(issueKey ,prefs) {
      body: JSON.stringify({
        "update": {
          "summary" : [{"set" : `${prefs.label}`}],
+         
     },
     "fields": {
         "description": {
@@ -141,13 +172,20 @@ export function updateData(issueKey ,prefs) {
                 }
             ]
         }
-    }
+    },
+    "updates": [
+        {
+          "customField": "customfield_10032",
+          "value": `${prefs.acceptanceCriteria}`
+        },
+    ]
      })
     
    }).then(resp => resp.json())
    .then(function (){
     chrome.storage.local.set({'modifiedLabel': prefs.modifiedLabel})
     chrome.storage.local.set({'modifiedDescription': prefs.modifiedDescription})
+    chrome.storage.local.set({'modifiedAcceptanceCriteria': prefs.modifiedAcceptanceCriteria})
     
 })
 

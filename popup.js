@@ -36,15 +36,17 @@
     let modifiedLabelElement = document.getElementById('modifiedHeader')
     let descriptionElement = document.getElementById('textArea')
     let modifiedDescriptionElement = document.getElementById('modifiedTextArea')
+    let acceptanceCriteriaElement = document.getElementById('acceptance_c')
+    let modifiedAcceptanceCriteriaElement = document.getElementById('modifiedAcceptance_c')
     let generatedTestCasesElement = document.getElementById('generatedTestCases')
     let page404 = document.getElementById('error404')
-    
 
     //wrapers
     let descriptionWrap = document.querySelector('.textArea')
     let labelWrap = document.querySelector('.header')
     let modifiedLabelWrap = document.querySelector('.modifiedHeader')
     let modifiedDescriptionWrap = document.querySelector('.modifiedTextArea')
+    let generatedTestCasesWrap = document.querySelector('.generatedTestCases')
     
 
     // btns
@@ -68,8 +70,10 @@
                 label : labelElement.value,
                 taskId : taskIdElement.value,
                 description : descriptionElement.value,
+                acceptanceCriteria : acceptanceCriteriaElement.value,
                 modifiedLabel : modifiedLabelElement.value,
                 modifiedDescription : modifiedDescriptionElement.value,
+                modifiedAcceptanceCriteria : modifiedAcceptanceCriteriaElement.value,
                 taskElement :  taskElementValue.value
             }
 
@@ -91,14 +95,18 @@
             const currentTab = tabs[0];
             const pathname = new URL(currentTab.url).pathname;
             const currentIssueKey = pathname.split('/').pop();
+
             const prefs = {
                 label : modifiedLabelElement.value,
                 taskId : taskIdElement.value,
                 description : modifiedDescriptionElement.value,
+                acceptanceCriteria : modifiedAcceptanceCriteriaElement.value,
                 modifiedLabel : modifiedLabelElement.value,
                 modifiedDescription : modifiedDescriptionElement.value,
+                modifiedAcceptanceCriteria : modifiedAcceptanceCriteriaElement.value,
                 taskElement :  taskElementValue.value
             }
+
             chrome.runtime.sendMessage({ message: 'updateData', pathname: currentIssueKey , prefs });
         });
 
@@ -107,15 +115,18 @@
 
 
     function contentGetter() {
-        chrome.storage.local.get(['label', 'description' , 'modifiedLabel' , 'generatedTestCases'  , 'modifiedDescription' , 'taskId' , 'element' ], (result)=> {
-            const { label , description , modifiedLabel , modifiedDescription ,taskId  ,element , generatedTestCases } = result;
+        chrome.storage.local.get(['label', 'description' , 'modifiedLabel' , 'generatedTestCases'  , 'modifiedDescription' , 'taskId' , 'acceptanceCriteria' , 'modifiedAcceptanceCriteria' , 'element' ], (result)=> {
+            const { label , description , modifiedLabel , modifiedDescription ,taskId  ,element , generatedTestCases ,acceptanceCriteria , modifiedAcceptanceCriteria} = result;
             labelElement.value = label
             modifiedLabelElement.value = modifiedLabel
             descriptionElement.value = description
             modifiedDescriptionElement.value = modifiedDescription 
+            acceptanceCriteriaElement.value = acceptanceCriteria
+            modifiedAcceptanceCriteriaElement.value = modifiedAcceptanceCriteria
             taskIdElement.innerHTML = taskId
             taskElementValue.value =  element 
             generatedTestCasesElement.value = generatedTestCases
+
         })
     }
 
@@ -124,8 +135,10 @@
         const prefs = {
             label : labelElement.value,
             description : descriptionElement.value,
+            acceptanceCriteria : acceptanceCriteriaElement.value,
             modifiedLabel : modifiedLabelElement.value,
             modifiedDescription : modifiedDescriptionElement.value,
+            modifiedAcceptanceCriteria : modifiedAcceptanceCriteriaElement.value,
             taskElement :  taskElementValue.value
         }
         chrome.runtime.sendMessage({ message: 'generateData' , prefs})
@@ -138,6 +151,7 @@
             description : descriptionElement.value,
             modifiedLabel : modifiedLabelElement.value,
             modifiedDescription : modifiedDescriptionElement.value,
+            modifiedAcceptanceCriteria : modifiedAcceptanceCriteriaElement.value,
             taskElement :  taskElementValue.value,
             generatedTestCases :  generatedTestCasesElement.value,
             
@@ -152,8 +166,10 @@
                 label : labelElement.value,
                 taskId : taskIdElement.value,
                 description : descriptionElement.value,
+                acceptanceCriteria : acceptanceCriteriaElement.value,
                 modifiedLabel : modifiedLabelElement.value,
                 modifiedDescription : modifiedDescriptionElement.value,
+                modifiedAcceptanceCriteria : modifiedAcceptanceCriteriaElement.value,
                 taskElement :  taskElementValue.value
         }
         chrome.runtime.sendMessage({ message: 'setTaskElement' , prefs})
@@ -161,50 +177,18 @@
         placeholderElement.style.display = 'flex';
 
         setTimeout(function () {
-            
-            // if (taskElementValue.value == 'label') {
-            //     labelWrap.style.display = 'block'
-            //     modifiedLabelWrap.style.display = 'block'
-            //     descriptionWrap.style.display = 'none'
-            //     modifiedDescriptionWrap.style.display = 'none'
-
-            // }else if (taskElementValue.value == 'description'){
-            //     labelWrap.style.display = 'none'
-            //     modifiedLabelWrap.style.display = 'none'
-            //     descriptionWrap.style.display = 'block'
-            //     modifiedDescriptionWrap.style.display = 'block'
-            // }
+       
             placeholderElement.style.display = 'none';
         }, 200);
 
     }
-
-    //error page
-    function setErrorPage() { 
-        chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
-            const currentTab = tabs[0];
-            const pathname = new URL(currentTab.url).pathname;
-            const currentIssueKey = pathname.split('/').pop();
-          
-            const prefs = {
-                label : labelElement.value,
-                taskId : taskIdElement.value,
-                description : descriptionElement.value,
-                modifiedLabel : modifiedLabelElement.value,
-                modifiedDescription : modifiedDescriptionElement.value,
-                taskElement :  taskElementValue.value
-            }
-            chrome.runtime.sendMessage({ message: 'getData', pathname: currentIssueKey , prefs , fullPath: currentTab.url });
-        });
-        
-    }
-
 
 
     refreshBtn.onclick =() => {
        
 
         placeholderElement.style.display = 'flex';
+        updateBtn.disabled = true;
 
         setTimeout(function () {
             placeholderElement.style.display = 'none';
@@ -230,7 +214,8 @@
     
     rephraseBtn.onclick =() => {
         placeholderElement.style.display = 'flex';
-        
+        updateBtn.disabled = false;
+
         contentRephrase()
 
             setTimeout(function () {
@@ -242,8 +227,9 @@
         }
 
     generateTestsBtn.onclick =() => {
+            updateBtn.disabled = false;
             placeholderElement.style.display = 'flex';
-            generatedTestCasesElement.style.display = 'block';
+            generatedTestCasesWrap.style.display = 'block';
             
             generateTestCases()
     
@@ -257,6 +243,9 @@
   
 
     document.addEventListener('DOMContentLoaded', function () {
+        updateBtn.disabled = true;
+        generatedTestCasesWrap.style.display = 'none';
+
 
         page404.style.display = 'none';
 
@@ -279,26 +268,3 @@
             }, 1000);
             
         })    
-
-    
-        function toggleDropdown() {
-            var dropdownContent = document.getElementById("myDropdown");
-            dropdownContent.classList.toggle("show");
-        }
-    
-        // Close the dropdown if the user clicks outside of it
-        window.onclick = function (event) {
-            if (!event.target.matches('.dropbtn')) {
-                var dropdowns = document.getElementsByClassName("dropdown-content");
-                for (var i = 0; i < dropdowns.length; i++) {
-                    var openDropdown = dropdowns[i];
-                    if (openDropdown.classList.contains('show')) {
-                        openDropdown.classList.remove('show');
-                    }
-                }
-            }
-        }
-
-
-
-        // print the selected items

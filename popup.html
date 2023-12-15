@@ -134,11 +134,16 @@
         </div> -->
 
       <div class="form-floating textArea">
-        <textarea disabled class="form-control" placeholder="Leave a comment here" id="textArea"
+        <textarea disabled class="form-control"  id="textArea"
           style="height: 100px"></textarea>
         <label for="floatingTextarea2">Task Description</label>
       </div>
-
+      <br>
+      <div class="form-floating acceptance_c">
+        <textarea disabled class="form-control"  id="acceptance_c"
+          style="height: 100px"></textarea>
+        <label for="floatingTextarea2">Task Acceptance Criteria</label>
+      </div>
       <br>
 
       <div class="form-floating mb-3 modifiedHeader">
@@ -147,23 +152,29 @@
       </div>
 
       <div class="form-floating modifiedTextArea">
-        <textarea class="form-control" placeholder="Leave a comment here" id="modifiedTextArea"
+        <textarea class="form-control"  id="modifiedTextArea"
           style="height: 100px"></textarea>
         <label for="floatingTextarea2">Modified Description</label>
       </div>
       <br>
 
-      <div class="form-floating modifiedTextArea">
-        <textarea class="form-control" placeholder="Leave a comment here" id="generatedTestCases"
+      <div class="form-floating modifiedAcceptance_c">
+        <textarea  class="form-control"  id="modifiedAcceptance_c"
           style="height: 100px"></textarea>
-        <label for="floatingTextarea2">Generated Test Cases</label>
+        <label for="floatingTextarea2">Modified Acceptance Criteria</label>
       </div>
 
       <div class="form-text">
         <strong>Note : </strong>please do the refresh if the data not updated or rephrased immediately.
       </div>
+
       <br>
-      <br>
+      <div  class="form-floating generatedTestCases">
+        <textarea class="form-control"  id="generatedTestCases"
+        style="height: 200px"></textarea>
+        <label for="floatingTextarea2">Generated Test Cases</label>
+      </div>
+
       <!-- <h2>User</h2>
       <div class="input-group mb-3">
         <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
@@ -181,25 +192,25 @@
       </button> -->
      
 
+      <hr />
       <div class="btn-grouped">
-
+        
         <div>
-          <button type="button" class="btn btn-primary" id="refresh" data-toggle="tooltip" data-placement="top"
-            data-title=""><img src="./assets/refresh.jpg"></button>
-          <button type="button" class="btn btn-primary" id="Update">Update</button>
+          <button type="button" class="btn btn-primary" id="refresh" data-toggle="tooltip"  data-placement="top"
+          title="refresh data inside Avolo"><img src="./assets/refresh.jpg"></button>
+          <button  title="update content in jira page" type="button" class="btn btn-primary" id="Update">Update</button>
         </div>
-
+        
+        
         <div class="ai-btn-grouped btn-grouped">
 
-          <button type="button" class="btn btn-primary " id="Rephrase"><img
-            src="./assets/logo-gpt.png"><span>Rephrase</span> </button>
-          <button type="button" class="btn btn-primary " id="generateTests"><img
+        <button type="button" class="btn btn-primary " id="Rephrase"><img
+          src="./assets/logo-gpt.png"><span>Rephrase</span> </button>
+        <button type="button" class="btn btn-primary " id="generateTests"><img
           src="./assets/logo-gpt.png"><span>Generate Test Cases</span> </button>
         </div>
-
+        
       </div>
-
-
     </main>
   </div>
 
