@@ -47,6 +47,8 @@
     let modifiedLabelWrap = document.querySelector('.modifiedHeader')
     let modifiedDescriptionWrap = document.querySelector('.modifiedTextArea')
     let generatedTestCasesWrap = document.querySelector('.generatedTestCases')
+    let acceptance_cWrap = document.querySelector('.acceptance_c')
+    let modifiedAcceptance_cWrap = document.querySelector('.modifiedAcceptance_c')
     
 
     // btns
@@ -110,9 +112,37 @@
             chrome.runtime.sendMessage({ message: 'updateData', pathname: currentIssueKey , prefs });
         });
 
-        
     }
 
+
+
+
+
+    // https://mohamedsaiedfathallah.atlassian.net/plugins/servlet/oauth/authorize?client_id=BsUf9ODq0gHoZ1FnwpmIZpMfITW8g40Z&redirect_uri=https%3A%2F%2Fehboffoiipaejejnenhmnfdomdknfnho.chromiumapp.org%2Foauth%2Fcallback&scope=read%20write&response_type=token
+
+
+
+
+//     document.getElementById('startOAuthFlow').addEventListener('click', function () {
+
+//     // Replace these values with your actual OAuth credentials and Jira configuration
+//     const clientId = 'yeZcQMkCUJa7XICQ2gf1sPpcsuYmEm0M';
+//     const redirectUri = chrome.identity.getRedirectURL('oauth-callback.html'); // Ensure this matches your extension's manifest
+//     const scope = 'read write'; // Adjust based on the permissions your extension needs
+
+//     // Construct the authorization URL
+//     const authUrlWithParams = `https://mohamedsaiedfathallah.atlassian.net/plugins/servlet/oauth/authorize` +
+//     `?client_id=${clientId}` +
+//     `&redirect_uri=${encodeURIComponent(redirectUri)}` +
+//     `&scope=${encodeURIComponent(scope)}` +
+//     `&response_type=token`;
+
+//     // Use the authorization URL in your extension's code
+//     console.log('Authorization URL:', authUrlWithParams);
+
+//     // Example: Open the URL in a new tab
+//     chrome.tabs.create({ url: authUrlWithParams });
+// });
 
     function contentGetter() {
         chrome.storage.local.get(['label', 'description' , 'modifiedLabel' , 'generatedTestCases'  , 'modifiedDescription' , 'taskId' , 'acceptanceCriteria' , 'modifiedAcceptanceCriteria' , 'element' ], (result)=> {
@@ -161,6 +191,15 @@
 
     
 
+    acceptance_cWrap.style.display = 'none';
+    modifiedAcceptance_cWrap.style.display = 'none';
+    labelWrap.style.display = 'block';
+    modifiedLabelWrap.style.display = 'block';
+    descriptionWrap.style.display = 'none';
+    modifiedDescriptionWrap.style.display = 'none';
+    generatedTestCasesWrap.style.display = 'none';
+
+
     taskElementValue.onchange =()=> {
         const prefs = {
                 label : labelElement.value,
@@ -174,21 +213,51 @@
         }
         chrome.runtime.sendMessage({ message: 'setTaskElement' , prefs})
 
+        if (taskElementValue.value == "label") {
+                acceptance_cWrap.style.display = 'none';
+                modifiedAcceptance_cWrap.style.display = 'none';
+                labelWrap.style.display = 'block';
+                modifiedLabelWrap.style.display = 'block';
+                descriptionWrap.style.display = 'none';
+                modifiedDescriptionWrap.style.display = 'none';
+                generatedTestCasesWrap.style.display = 'none';
+        }else if (taskElementValue.value == "description") {
+                acceptance_cWrap.style.display = 'none';
+                modifiedAcceptance_cWrap.style.display = 'none';
+                labelWrap.style.display = 'none';
+                modifiedLabelWrap.style.display = 'none';
+                descriptionWrap.style.display = 'block';
+                modifiedDescriptionWrap.style.display = 'block';
+                generatedTestCasesWrap.style.display = 'none';
+        }else if (taskElementValue.value == "acceptance_criteria") {
+                acceptance_cWrap.style.display = 'block';
+                modifiedAcceptance_cWrap.style.display = 'block';
+                labelWrap.style.display = 'none';
+                modifiedLabelWrap.style.display = 'none';
+                descriptionWrap.style.display = 'none';
+                modifiedDescriptionWrap.style.display = 'none';
+                generatedTestCasesWrap.style.display = 'none';
+            }
+
+
         placeholderElement.style.display = 'flex';
 
         setTimeout(function () {
        
             placeholderElement.style.display = 'none';
+            
         }, 200);
 
     }
 
 
-    refreshBtn.onclick =() => {
-       
+  
 
+    refreshBtn.onclick =() => {
+
+      
         placeholderElement.style.display = 'flex';
-        updateBtn.disabled = true;
+        updateBtn.disabled = false;
 
         setTimeout(function () {
             placeholderElement.style.display = 'none';
@@ -216,6 +285,9 @@
         placeholderElement.style.display = 'flex';
         updateBtn.disabled = false;
 
+      
+
+
         contentRephrase()
 
             setTimeout(function () {
@@ -230,7 +302,9 @@
             updateBtn.disabled = false;
             placeholderElement.style.display = 'flex';
             generatedTestCasesWrap.style.display = 'block';
-            
+
+          
+
             generateTestCases()
     
                 setTimeout(function () {
@@ -242,24 +316,27 @@
             }
   
 
-    document.addEventListener('DOMContentLoaded', function () {
-        updateBtn.disabled = true;
-        generatedTestCasesWrap.style.display = 'none';
+            document.addEventListener('DOMContentLoaded', function () {
+                updateBtn.disabled = false;
+                // generatedTestCasesWrap.style.display = 'block';
+        // console.log('taskElementValue' ,  prefs.taskElement);
+               
+                // window.open(location.href, "popup", "toolbar=0" );
+                
+                page404.style.display = 'none';
+                
 
-
-        page404.style.display = 'none';
-
-
-        chrome.runtime.onMessageExternal.addListener(function (message) {
-            if (message === 'fetched') {
-                console.log('fetched again');
-                placeholderElement.style.display = 'none';
-            }
-        })
+                
+        // chrome.runtime.onMessageExternal.addListener(function (message) {
+        //     if (message === 'fetched') {
+        //         console.log('fetched again');
+        //         placeholderElement.style.display = 'none';
+        //     }
+        // })
 
         contentGetter()
         getContent()
-        
+       
         setTimeout(function () {
             // Hide the preloader
             placeholderElement.style.display = 'none';

@@ -188,4 +188,60 @@
 
 
 
-        
+
+
+// Create the element to append
+const init = function name() {
+    
+    const newElement = document.createElement("iframe");
+    newElement.textContent = "Appended Element";
+    newElement.id = "Appended";
+    newElement.src = "chrome-extension://ehboffoiipaejejnenhmnfdomdknfnho/popup.html";
+    newElement.style.backgroundColor = "#3498db";
+    newElement.style.color = "#fff";
+    newElement.style.padding = "10px";
+
+
+    
+    
+    // Append the element to the body of the web page
+    document.body.appendChild(newElement);
+}
+init()
+
+
+        const draggableItem = document.getElementById('Appended');
+        let offsetX, offsetY;
+        let isDragging = false;
+
+        draggableItem.addEventListener('mousedown', (event) => {
+        isDragging = true;
+
+        // Calculate the offset from the mouse pointer to the top-left corner of the element
+        offsetX = event.clientX - draggableItem.getBoundingClientRect().left;
+        offsetY = event.clientY - draggableItem.getBoundingClientRect().top;
+
+        // Set cursor to indicate dragging
+        draggableItem.style.cursor = 'grabbing';
+        });
+
+        document.addEventListener('mousemove', (event) => {
+        if (isDragging) {
+            // Calculate new position based on mouse movement
+            const x = event.clientX - offsetX;
+            const y = event.clientY - offsetY;
+
+            // Set the new position
+            draggableItem.style.left = `${x}px`;
+            draggableItem.style.top = `${y}px`;
+        }
+        });
+
+        document.addEventListener('mouseup', () => {
+        if (isDragging) {
+            isDragging = false;
+
+            // Set cursor back to default
+            draggableItem.style.cursor = 'grab';
+        }
+        });

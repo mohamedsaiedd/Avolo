@@ -12,8 +12,9 @@
 </head>
 
 <body>
+  
   <div id="error404">
-    <header>
+  <header>
       <div class="content">
         <img src="./assets/ex-logo.png">
 
@@ -22,9 +23,11 @@
           <span class="text-white-50">powered by <span class="text-100"><img src="./assets/ft.png"></span></span>
         </h1>
       </div>
-    </header>
-    <main >
-    <!-- <h2> this is not a Jira site</h2> -->
+  </header>
+
+  <main >
+  <!-- <h2> this is not a Jira site</h2> -->
+
     <div class="content404 ">
       <h2>This is not a <strong>Jira</strong> site</h2>
       <h1 >404</h1>
@@ -55,9 +58,11 @@
       </svg>
     </div>
   </main>
-  
 </div>
-  </div>
+
+
+    
+
   <div class="container">
     <div id="placeholder">
       <svg xmlns="http://www.w3.org/2000/svg" width="109.197" height="102.169" viewBox="0 0 429.197 422.169">
@@ -84,7 +89,6 @@
     <header>
       <div class="content">
         <img src="./assets/ex-logo.png">
-
         <h1>
           <span class="fw-bold"> Jira AI-Assistant</span>
           <span class="text-white-50">powered by <span class="text-100"><img src="./assets/ft.png"></span></span>
@@ -93,22 +97,20 @@
     </header>
 
     <main>
-      <h2><strong> Task ID :<span id="taskId"></span></strong></h2>
+      <h2><strong> Ticket ID :<span id="taskId"></span></strong></h2>
       <select id="taskElement" class=" form-select form-select-lg mb-3 " name="taskElements"
         aria-label="Default select example">
-        <option selected disabled>select item</option>
-        <option value="label">Label</option>
+        <option selected disabled>Select Item</option>
+        <option value="label">Summary</option>
         <option value="description">Description</option>
         <option value="acceptance_criteria">Acceptance Criteria</option>
       </select>
 
       <div class="form-floating mb-3 header">
-
         <input type="text" disabled class="form-control" id="header" placeholder="name@example.com">
-        <label for="floatingInput">Task label</label>
-
+        <label for="floatingInput">Ticket Summary</label>
         <div class="form-text">
-          Regenerate now the task elements using impactful words and phrasing with your smart assistant
+          Regenerate now the Ticket elements using impactful words and phrasing with your smart assistant
           <strong>Avolo</strong>.
         </div>
       </div>
@@ -133,42 +135,38 @@
           </div>
         </div> -->
 
-      <div class="form-floating textArea">
-        <textarea disabled class="form-control"  id="textArea"
+        <div class="form-floating mb-3 modifiedHeader">
+          <input type="text" class="form-control" id="modifiedHeader" placeholder="name@example.com">
+          <label for="floatingInput">Modified Summary</label>
+        </div>
+        <div class="form-floating acceptance_c">
+          <textarea disabled class="form-control"  id="acceptance_c"
           style="height: 100px"></textarea>
-        <label for="floatingTextarea2">Task Description</label>
+          <label for="floatingTextarea2">Ticket Acceptance Criteria</label>
       </div>
-      <br>
-      <div class="form-floating acceptance_c">
-        <textarea disabled class="form-control"  id="acceptance_c"
-          style="height: 100px"></textarea>
-        <label for="floatingTextarea2">Task Acceptance Criteria</label>
-      </div>
-      <br>
-
-      <div class="form-floating mb-3 modifiedHeader">
-        <input type="text" class="form-control" id="modifiedHeader" placeholder="name@example.com">
-        <label for="floatingInput">Modified label</label>
-      </div>
-
-      <div class="form-floating modifiedTextArea">
-        <textarea class="form-control"  id="modifiedTextArea"
-          style="height: 100px"></textarea>
-        <label for="floatingTextarea2">Modified Description</label>
-      </div>
-      <br>
+      <!-- <br> -->
 
       <div class="form-floating modifiedAcceptance_c">
         <textarea  class="form-control"  id="modifiedAcceptance_c"
           style="height: 100px"></textarea>
         <label for="floatingTextarea2">Modified Acceptance Criteria</label>
       </div>
-
-      <div class="form-text">
-        <strong>Note : </strong>please do the refresh if the data not updated or rephrased immediately.
+      
+      <div class="form-floating textArea">
+        <textarea disabled class="form-control"  id="textArea"
+          style="height: 100px"></textarea>
+        <label for="floatingTextarea2">Ticket Description</label>
       </div>
 
-      <br>
+      <!-- <br> -->
+      <div class="form-floating modifiedTextArea">
+        <textarea class="form-control"  id="modifiedTextArea"
+          style="height: 100px"></textarea>
+        <label for="floatingTextarea2">Modified Description</label>
+      </div>
+
+
+      <!-- <br> -->
       <div  class="form-floating generatedTestCases">
         <textarea class="form-control"  id="generatedTestCases"
         style="height: 200px"></textarea>
@@ -190,29 +188,34 @@
       <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
         regenrate
       </button> -->
-     
-
-      <hr />
-      <div class="btn-grouped">
-        
-        <div>
-          <button type="button" class="btn btn-primary" id="refresh" data-toggle="tooltip"  data-placement="top"
-          title="refresh data inside Avolo"><img src="./assets/refresh.jpg"></button>
-          <button  title="update content in jira page" type="button" class="btn btn-primary" id="Update">Update</button>
-        </div>
-        
-        
-        <div class="ai-btn-grouped btn-grouped">
-
-        <button type="button" class="btn btn-primary " id="Rephrase"><img
-          src="./assets/logo-gpt.png"><span>Rephrase</span> </button>
-        <button type="button" class="btn btn-primary " id="generateTests"><img
-          src="./assets/logo-gpt.png"><span>Generate Test Cases</span> </button>
-        </div>
-        
-      </div>
     </main>
-  </div>
+  </div>  
+ 
+        <button type="button" class="btn btn-primary" id="refresh" data-toggle="tooltip"  data-placement="top"
+        title="refresh data inside Avolo"><img src="./assets/refresh.jpg"></button>
+
+          <div class="footer-group container">
+           
+            <div class="btn-grouped">
+                    <div>
+                      <button  title="update content in jira page" type="button" class="btn btn-primary" id="Update">Update</button>
+                    </div>
+                
+                      <div class="ai-btn-grouped btn-grouped">
+                      
+                      <button type="button" class="btn btn-primary " id="Rephrase"><img
+                      src="./assets/logo-gpt.png"><span>Rephrase</span> </button>
+                      <button type="button" class="btn btn-primary" id="generateTests"><img
+                        src="./assets/logo-gpt.png"><span>Generate Test Cases</span> </button>
+                    </div>
+                  </div>
+                  <div class="form-text">
+                    <strong>Note : </strong>please do the refresh if the data not updated or rephrased immediately.
+                  </div>
+              </div>
+              <!-- o-auth -->
+  <!-- <button id="startOAuthFlow">Start OAuth Flow</button> -->
+
 
 </body>
 

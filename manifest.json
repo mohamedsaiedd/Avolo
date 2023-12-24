@@ -2,11 +2,16 @@
   "name": "Avolo",
   "version": "0.1.2",
   "description": "Avolo Jira Ai Assistant",
-  "permissions": ["storage", "tabs" ,"contextMenus","activeTab", "sidePanel" ,"scripting"],
+  "permissions": ["storage", "tabs" ,"contextMenus","activeTab", "sidePanel" ,"scripting" ,"identity"],
   "host_permissions": ["<all_urls>"],
   "background": {
     "service_worker": "background.js",
     "type": "module"
+  },
+  "oauth2": {
+    "client_id": "yeZcQMkCUJa7XICQ2gf1sPpcsuYmEm0M",
+    "scopes": ["read", "write"],
+    "redirect_uris": ["chrome-extension://ehboffoiipaejejnenhmnfdomdknfnho/oauth-callback.html"]
   },
   "content_scripts": [
     {

@@ -11,17 +11,19 @@ export  function fetchData(issueKey,prefs) {
         
     }).then(resp => resp.json())
     .then(json => {
-                let description = json.fields.description.content[0].content[0].text
-                let label = json.fields.summary
-                let acc_creatirea_array = json.fields.customfield_10032.content[0].content ;
+                let description = json?.fields?.description?.content[0]?.content[0]?.text
+                let label = json?.fields?.summary
+                let acc_creatirea_array = json?.fields?.customfield_10032?.content[0]?.content ;
                 let acceptanceCriteria = ''
+                if (acc_creatirea_array) {
 
-                for (const item of acc_creatirea_array ) { 
-                    if(item.text) {
-                        acceptanceCriteria += item.text + '\n';
+                    for (const item of acc_creatirea_array ) { 
+                        if(item.text) {
+                            acceptanceCriteria += item?.text + '\n';
+                        }
                     }
                 }
-
+                    
                 chrome.storage.local.set({'description': description})
                 chrome.storage.local.set({'modifiedDescription': description})
                 chrome.storage.local.set({'label': label})
@@ -77,7 +79,7 @@ export function generateData(prefs) {
           },
         method: 'POST',
         body: JSON.stringify({
-            body: `rephrase this text : ${prefs.modifiedDescription}`
+            body: `rephrase and formate this text as a user story description : ${prefs.modifiedDescription}`
         })
         
     }).then(resp => resp.json())
@@ -126,7 +128,7 @@ export function generateTestCases(prefs) {
           },
         method: 'POST',
         body: JSON.stringify({
-            body: `generate test cases for this ticket Description in some points : ${prefs.modifiedDescription}`
+            body: `generate test cases for this ticket Description and Acceptance Criteria in some points and the expected results: ${prefs.modifiedDescription} & ${prefs.modifiedAcceptanceCriteria}`
         })
         
     }).then(resp => resp.json())
@@ -138,10 +140,6 @@ export function generateTestCases(prefs) {
     })
 }
 
-
-export function errorPage() {
-
-}
 export function updateData(issueKey ,prefs) {
     console.log('prefsUpdateData', prefs);
     let ticketUrl = `https://mohamedsaiedfathallah.atlassian.net/rest/api/3/issue/${issueKey}`
@@ -173,14 +171,8 @@ export function updateData(issueKey ,prefs) {
             ]
         }
     },
-    "updates": [
-        {
-          "customField": "customfield_10032",
-          "value": `${prefs.acceptanceCriteria}`
-        },
-    ]
+   
      })
-    
    }).then(resp => resp.json())
    .then(function (){
     chrome.storage.local.set({'modifiedLabel': prefs.modifiedLabel})

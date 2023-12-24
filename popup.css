@@ -124,27 +124,30 @@ h2 {
   }
 }
 
-button#refresh{
-    position: fixed;
-    margin-top: 15px;
-    top: 43px;
-    right: 22px;
-    border-radius: 75%;
-    width: 35px;
-    height: 35px;
-    display: flex;
-    align-items: center;
-    justify-items: center;
-    justify-content: center;
-    opacity: 0.5;
+button#refresh {
+  position: fixed;
+  margin-top: 15px;
+  top: 43px;
+  right: 22px;
+  border-radius: 75%;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  justify-content: center;
+  opacity: 0.5;
 }
+
 button#refresh:hover {
   opacity: 1;
 }
-button#refresh img{ 
+
+button#refresh img {
   width: 20px;
   margin: 0;
 }
+
 #Rephrase, #generateTests {
   font-weight: 600;
   display: flex;
@@ -153,7 +156,7 @@ button#refresh img{
   background-color: #00A67E !important;
 }
 
-#Rephrase img, #generateTests img{
+#Rephrase img, #generateTests img {
   width: 25px;
 
 }
@@ -172,8 +175,9 @@ button#refresh img{
 }
 
 hr {
-  margin : 0.5rem 0 !important
+  margin: 0.5rem 0 !important
 }
+
 /* error page */
 #error404 header {
   width: 100%;
@@ -218,17 +222,27 @@ hr {
   color: #31277C;
   font-weight: 900;
 }
+
 .content404 h2 {
   color: #ffffff;
   font-size: 20px;
 }
+
 .content404 p {
   color: #ffffff;
   text-align: center;
-  font-weight:100
-
+  font-weight: 100
 }
 
 
+.footer-group {
+  background-color: #ffffff;
+  padding: 10px 20px;
+  position: sticky;
+  bottom: 0px;
+  backdrop-filter: blur(6px);
+}
 
-
+.modifiedTextArea , .modifiedAcceptance_c  , .generatedTestCases {
+  margin-top: 20px
+}
